@@ -222,7 +222,7 @@ export default function HeroEditorialStagger({ navigate }) {
               <div className="flex items-center gap-1 px-4 pt-3 pb-2 bg-[#05081A] border-b border-[#1a2656] text-xs font-mono">
                 <button
                   onClick={() => setActiveTab('metrics')}
-                  className={`flex-1 py-1.5 px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`flex-1 py-2.5 min-h-[40px] px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                     activeTab === 'metrics'
                       ? 'bg-[#00C2FF]/15 text-[#00C2FF] border border-[#00C2FF]/30 shadow-xs'
                       : 'text-slate-400 hover:text-[#00C2FF]'
@@ -233,7 +233,7 @@ export default function HeroEditorialStagger({ navigate }) {
                 </button>
                 <button
                   onClick={() => setActiveTab('roi')}
-                  className={`flex-1 py-1.5 px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`flex-1 py-2.5 min-h-[40px] px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                     activeTab === 'roi'
                       ? 'bg-[#00C2FF]/15 text-[#00C2FF] border border-[#00C2FF]/30 shadow-xs'
                       : 'text-slate-400 hover:text-[#00C2FF]'
@@ -244,7 +244,7 @@ export default function HeroEditorialStagger({ navigate }) {
                 </button>
                 <button
                   onClick={() => setActiveTab('nodes')}
-                  className={`flex-1 py-1.5 px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`flex-1 py-2.5 min-h-[40px] px-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                     activeTab === 'nodes'
                       ? 'bg-[#00C2FF]/15 text-[#00C2FF] border border-[#00C2FF]/30 shadow-xs'
                       : 'text-slate-400 hover:text-[#00C2FF]'

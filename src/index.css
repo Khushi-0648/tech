@@ -91,7 +91,7 @@
     --color-accent-gold: #0090e7;
     --color-highlight-amber: #0090e7;
     --color-text-ash: #475569;
-    --color-text-white: #0A0F2E;
+    --color-text-white: #ffffff;
     --color-border-subtle: #e2e8f0;
 
     /* Dual-Contrast Mixed Architecture Tokens */
@@ -646,3 +646,38 @@ html {
 .circuit-track {
   background: linear-gradient(90deg, rgba(26, 38, 86, 0.4) 0%, rgba(0, 194, 255, 0.4) 50%, rgba(26, 38, 86, 0.4) 100%);
 }
+
+/* ==========================================================================
+   Light Blue Button Pure White Text & Mobile Polish Guarantee
+   ========================================================================== */
+/* Force pure white text on all light blue / cyan / sky / accent-blue buttons & links */
+button[class*="bg-[#00C2FF]"],
+a[class*="bg-[#00C2FF]"],
+button[class*="bg-[#0090e7]"],
+a[class*="bg-[#0090e7]"],
+button[class*="bg-[var(--accent-blue)]"],
+a[class*="bg-[var(--accent-blue)]"],
+button[class*="bg-cyan-"],
+a[class*="bg-cyan-"],
+button[class*="bg-sky-"],
+a[class*="bg-sky-"] {
+  color: #ffffff !important;
+}
+
+button[class*="bg-[#00C2FF]"] *,
+a[class*="bg-[#00C2FF]"] *,
+button[class*="bg-[#0090e7]"] *,
+a[class*="bg-[#0090e7]"] *,
+button[class*="bg-[var(--accent-blue)]"] *,
+a[class*="bg-[var(--accent-blue)]"] * {
+  color: #ffffff !important;
+}
+
+/* Mobile Touch Targets & iOS Safari Viewport Enhancements */
+@media (max-width: 640px) {
+  /* Prevent iOS automatic page zoom by ensuring minimum 16px font-size on all form inputs */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+

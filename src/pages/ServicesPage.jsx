@@ -315,7 +315,7 @@ export default function ServicesPage({ navigate }) {
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
                 <button
                   onClick={() => navigate('contact')}
-                  className="w-full px-6 py-3.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-slate-950 bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_16px_rgba(0,194,255,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full px-6 py-3.5 min-h-[44px] rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_16px_rgba(0,194,255,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Request Discovery Call</span>
                   <ArrowRight className="w-4 h-4" />

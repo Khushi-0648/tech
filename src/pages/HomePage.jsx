@@ -1267,7 +1267,7 @@ export default function HomePage({ navigate }) {
               <div className="mt-8">
                 <button
                   onClick={() => navigate('about')}
-                  className="px-6 py-3 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-slate-950 bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_16px_rgba(0,194,255,0.3)] transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="px-6 py-3.5 min-h-[44px] rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_16px_rgba(0,194,255,0.3)] transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   Our Story &amp; Leadership &rarr;
                 </button>
@@ -1753,7 +1753,7 @@ export default function HomePage({ navigate }) {
               onClick={() => {
                 document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 rounded-xl font-display font-bold text-sm uppercase tracking-wider text-slate-950 bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_20px_rgba(0,194,255,0.35)] transition-all cursor-pointer"
+              className="px-8 py-4 rounded-xl font-display font-bold text-sm uppercase tracking-wider text-white bg-[#00C2FF] hover:brightness-110 shadow-[0_4px_20px_rgba(0,194,255,0.35)] transition-all cursor-pointer"
             >
               Get Free Consultation &rarr;
             </button>

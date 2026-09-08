@@ -360,7 +360,7 @@ export default function Navbar({ currentRoute, navigate }) {
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-11 h-11 rounded-xl border border-[var(--border-color)] text-[var(--accent-blue)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)] transition-all cursor-pointer flex items-center justify-center xl:hidden shrink-0 active:scale-95"
+              className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl border border-[var(--border-color)] text-[var(--accent-blue)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)] transition-all cursor-pointer flex items-center justify-center xl:hidden shrink-0 active:scale-95"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
