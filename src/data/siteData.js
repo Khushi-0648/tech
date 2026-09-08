@@ -73,6 +73,7 @@ export const companyInfo = {
 export const servicesData = [
   {
     id: "web-development",
+    slug: "web-development",
     title: "Web Development & Scalable Engineering",
     shortDesc: "Full-stack web apps, headless CMS, technical SEO & bank-grade security.",
     fullDesc: "We engineer bespoke full-stack web applications, headless CMS platforms, and cloud systems from our tech center in Sector 62, Noida. Built with sub-second Core Web Vitals, semantic schema, and OWASP WSTG v4.2 bank-grade security standards.",
@@ -92,6 +93,7 @@ export const servicesData = [
   },
   {
     id: "ai-automation",
+    slug: "artificial-intelligence-and-automation",
     title: "Artificial Intelligence & Automation",
     shortDesc: "Intelligent workflows, autonomous agents & ML pipelines driving operational velocity.",
     fullDesc: "Harness the power of AI, machine learning, and robotic process automation (RPA) to eliminate manual data entry, streamline operations, and accelerate throughput by up to 40%.",
@@ -110,6 +112,7 @@ export const servicesData = [
   },
   {
     id: "business-analytics",
+    slug: "business-analytics",
     title: "Business Analytics",
     shortDesc: "KPI dashboards, real-time data pipelines & strategic commercial insights.",
     fullDesc: "Reimagine operations with AI-infused intelligent processes that deliver efficiency, resilience, and continuous improvement at scale through executive dashboards and automated KPI tracking.",
@@ -127,6 +130,7 @@ export const servicesData = [
   },
   {
     id: "cloud-infrastructure",
+    slug: "cloud-infrastructure",
     title: "Cloud Infrastructure & DevOps",
     shortDesc: "Scalable, resilient multi-cloud architecture with 99.99% uptime guarantees.",
     fullDesc: "Accelerate your cloud journey with end-to-end migration, modernization, containerization, and managed cloud operations across AWS, Google Cloud, and Microsoft Azure.",
@@ -145,6 +149,7 @@ export const servicesData = [
   },
   {
     id: "consulting-operations",
+    slug: "consulting-operations",
     title: "Consulting & Operations",
     shortDesc: "Strategic advisory, digital transformation & organizational change management.",
     fullDesc: "Strategic advisory and transformation consulting that helps organizations navigate technological complexity, sunset legacy debt, and realize sustainable, compounded growth.",
@@ -162,6 +167,7 @@ export const servicesData = [
   },
   {
     id: "cybersecurity",
+    slug: "cybersecurity",
     title: "Cybersecurity & Pentesting",
     shortDesc: "24/7 threat detection, vulnerability audits, zero-trust & compliance.",
     fullDesc: "Protect your digital estate with bank-grade cybersecurity services—from continuous threat monitoring and OWASP penetration testing to ISO 27001 and SOC 2 compliance frameworks.",
@@ -180,6 +186,7 @@ export const servicesData = [
   },
   {
     id: "data-analytics",
+    slug: "data-analytics",
     title: "Data Analytics & Big Data",
     shortDesc: "Big data warehousing, ETL pipelines & interactive data visualization.",
     fullDesc: "Turn raw data into actionable insights with end-to-end data analytics services—from ingestion, cleaning, and ETL modeling to predictive forecasting and real-time visualization.",
@@ -197,6 +204,7 @@ export const servicesData = [
   },
   {
     id: "enterprise-solutions",
+    slug: "enterprise-solutions",
     title: "Enterprise Solutions (ERP & CRM)",
     shortDesc: "ERP, CRM & unified integration platforms built for seamless enterprise scale.",
     fullDesc: "Deploy and optimize leading ERP, CRM, and bespoke integration platforms to streamline mission-critical business processes, eliminate data silos, and unlock organizational value.",
@@ -214,6 +222,7 @@ export const servicesData = [
   },
   {
     id: "industrial-autonomy",
+    slug: "industrial-autonomy-and-engineering",
     title: "Industrial Autonomy & Engineering",
     shortDesc: "Robotics, IoT sensor telemetry & smart manufacturing engineering.",
     fullDesc: "Drive smart manufacturing and engineering excellence through industrial IoT sensors, digital twins, and autonomous telemetry integration connecting shop floor to executive cloud.",
@@ -231,6 +240,7 @@ export const servicesData = [
   },
   {
     id: "network-solutions",
+    slug: "network-solutions-and-services",
     title: "Network Solutions & Managed Services",
     shortDesc: "SD-WAN, VPN, LAN/WAN architecture & 24/7 managed enterprise connectivity.",
     fullDesc: "Design, deploy, and manage next-generation corporate networks that deliver the uncompromising connectivity, fault tolerance, and security required for distributed global teams.",

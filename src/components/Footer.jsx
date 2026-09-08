@@ -87,28 +87,39 @@ export default function Footer({ navigate }) {
               </div>
             </div>
 
-            {/* Column 2: Services Directory (3 cols) */}
+            {/* Column 2: 10 Dedicated Services Directory (3 cols) */}
             <div className="lg:col-span-3 space-y-3">
               <h4 className="text-sm font-mono font-bold uppercase tracking-wider text-[var(--accent-blue)]">
-                Services
+                Services (10 Domains)
               </h4>
-              <ul className="space-y-2 text-xs text-slate-400">
-                {servicesData.slice(0, 7).map((svc) => (
-                  <li key={svc.id}>
+              <ul className="space-y-1.5 text-xs text-slate-400">
+                {[
+                  { slug: 'web-development', name: 'Web Development' },
+                  { slug: 'artificial-intelligence-and-automation', name: 'AI & Automation' },
+                  { slug: 'business-analytics', name: 'Business Analytics' },
+                  { slug: 'cloud-infrastructure', name: 'Cloud Infrastructure' },
+                  { slug: 'consulting-operations', name: 'Consulting & Operations' },
+                  { slug: 'cybersecurity', name: 'Cybersecurity' },
+                  { slug: 'data-analytics', name: 'Data Analytics' },
+                  { slug: 'enterprise-solutions', name: 'Enterprise Solutions' },
+                  { slug: 'industrial-autonomy-and-engineering', name: 'Industrial Autonomy' },
+                  { slug: 'network-solutions-and-services', name: 'Network Solutions' }
+                ].map((svc) => (
+                  <li key={svc.slug}>
                     <button
-                      onClick={() => { navigate('services'); scrollToTop(); }}
+                      onClick={() => { navigate(svc.slug); scrollToTop(); }}
                       className="hover:text-[var(--accent-blue)] transition-colors text-left truncate block max-w-full cursor-pointer text-slate-400 hover:text-white"
                     >
-                      {svc.title}
+                      {svc.name}
                     </button>
                   </li>
                 ))}
-                <li>
+                <li className="pt-1 border-t border-[#1a2656]/60">
                   <button
                     onClick={() => { navigate('services'); scrollToTop(); }}
-                    className="text-[var(--accent-blue)] hover:underline font-semibold"
+                    className="text-[var(--accent-blue)] hover:underline font-semibold flex items-center gap-1"
                   >
-                    View All 10 Services &rarr;
+                    <span>All Services Overview</span> &rarr;
                   </button>
                 </li>
               </ul>
@@ -203,19 +214,19 @@ export default function Footer({ navigate }) {
             
             <div className="flex items-center gap-6">
               <button 
-                onClick={() => setActiveModal('privacy')}
+                onClick={() => { navigate('privacy-policy'); scrollToTop(); }}
                 className="hover:text-[var(--accent-blue)] transition-colors cursor-pointer"
               >
                 Privacy Policy
               </button>
               <button 
-                onClick={() => setActiveModal('terms')}
+                onClick={() => { navigate('terms-of-service'); scrollToTop(); }}
                 className="hover:text-[var(--accent-blue)] transition-colors cursor-pointer"
               >
                 Terms of Service
               </button>
               <button 
-                onClick={() => setActiveModal('cookie')}
+                onClick={() => { navigate('cookie-policy'); scrollToTop(); }}
                 className="hover:text-[var(--accent-blue)] transition-colors cursor-pointer"
               >
                 Cookie Policy

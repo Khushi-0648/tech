@@ -10,6 +10,7 @@ export default defineConfig({
   ],
   server: {
     port: 5185,
+    strictPort: true,
     host: true,
     headers: {
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',

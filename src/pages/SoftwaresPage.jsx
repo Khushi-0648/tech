@@ -161,24 +161,14 @@ export default function SoftwaresPage({ navigate }) {
                 </div>
 
                 {/* Card Actions */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-200">
+                <div className="pt-4 border-t border-slate-200">
                   <button
                     onClick={() => handleStartDownload(soft)}
-                    className="w-full sm:flex-1 px-5 py-3.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700"
+                    className="w-full px-5 py-3.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider !text-white shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 hover:shadow-lg active:scale-98"
                   >
-                    <Download className="w-4 h-4" />
-                    <span>Download {soft.title} Free</span>
+                    <Download className="w-4 h-4 !text-white shrink-0" />
+                    <span className="!text-white font-bold">Download {soft.title} Free</span>
                   </button>
-
-                  {soft.id === 'warden' && (
-                    <button
-                      onClick={() => navigate('security-scanner')}
-                      className="w-full sm:w-auto px-5 py-3.5 rounded-xl font-mono text-xs font-semibold border transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs text-blue-700 bg-white border-blue-200 hover:bg-blue-50"
-                    >
-                      <Zap className="w-4 h-4 text-blue-600" />
-                      <span>Launch Live Tool &rarr;</span>
-                    </button>
-                  )}
                 </div>
 
               </motion.div>

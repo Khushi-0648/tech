@@ -5,9 +5,8 @@ import {
   Code2, Cpu, BarChart3, Cloud, Compass, ShieldCheck, 
   Database, Layers, Bot, Network, Sparkles, ExternalLink,
   Terminal, Zap, Activity, Globe, Building2, Laptop, Mail,
-  ChevronRight, Sun, Moon
+  ChevronRight, Home
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 import { companyInfo, servicesData } from '../data/siteData';
 import TechProsLogo from './TechProsLogo';
 
@@ -25,7 +24,6 @@ const iconMap = {
 };
 
 export default function Navbar({ currentRoute, navigate }) {
-  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -101,6 +99,7 @@ export default function Navbar({ currentRoute, navigate }) {
       services: [
         {
           id: 'web-development',
+          slug: 'web-development',
           title: 'Web Development & Scalable Apps',
           tag: 'React 19 / Next.js',
           shortDesc: 'Sub-second LCP, headless CMS, technical SEO & high concurrency',
@@ -108,6 +107,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'enterprise-solutions',
+          slug: 'enterprise-solutions',
           title: 'Enterprise Solutions (ERP & CRM)',
           tag: 'ERP / Salesforce',
           shortDesc: 'Custom ERP engineering, CRM sync & enterprise API microservices',
@@ -115,6 +115,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'industrial-autonomy',
+          slug: 'industrial-autonomy-and-engineering',
           title: 'Industrial Autonomy & Robotics',
           tag: 'IoT / SCADA',
           shortDesc: 'Shop-floor telemetry, MQTT edge gateways & digital twins',
@@ -130,6 +131,7 @@ export default function Navbar({ currentRoute, navigate }) {
       services: [
         {
           id: 'cloud-infrastructure',
+          slug: 'cloud-infrastructure',
           title: 'Cloud Infrastructure & DevOps',
           tag: 'AWS / Azure / K8s',
           shortDesc: 'Multi-cloud migrations, automated GitOps CI/CD & 99.99% SLA',
@@ -137,6 +139,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'network-solutions',
+          slug: 'network-solutions-and-services',
           title: 'Network Solutions & SD-WAN',
           tag: 'SD-WAN / VPN',
           shortDesc: 'Zero-loss routing, enterprise VPNs & 24/7 managed connectivity',
@@ -144,6 +147,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'consulting-operations',
+          slug: 'consulting-operations',
           title: 'Consulting & Operations',
           tag: 'Strategy & ROI',
           shortDesc: 'Tech stack audits, modernization roadmaps & vendor management',
@@ -159,6 +163,7 @@ export default function Navbar({ currentRoute, navigate }) {
       services: [
         {
           id: 'cybersecurity',
+          slug: 'cybersecurity',
           title: 'Cybersecurity & Pentesting',
           tag: 'Zero-Trust / SOC',
           shortDesc: 'Bank-grade continuous pentests, OWASP Top 10 & ISO 27001 audits',
@@ -166,6 +171,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'ai-automation',
+          slug: 'artificial-intelligence-and-automation',
           title: 'Artificial Intelligence & Agents',
           tag: 'LLMs / PyTorch',
           shortDesc: 'Autonomous agent architectures, RAG pipelines & bot automation',
@@ -173,6 +179,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'business-analytics',
+          slug: 'business-analytics',
           title: 'Business Analytics & BI',
           tag: 'Power BI / BigQuery',
           shortDesc: 'Executive C-Suite KPI dashboards & predictive revenue forecasting',
@@ -180,6 +187,7 @@ export default function Navbar({ currentRoute, navigate }) {
         },
         {
           id: 'data-analytics',
+          slug: 'data-analytics',
           title: 'Big Data & Data Analytics',
           tag: 'Kafka / dbt',
           shortDesc: 'Terabyte streaming pipelines, cloud data lakes & vector DBs',
@@ -225,10 +233,10 @@ export default function Navbar({ currentRoute, navigate }) {
             </button>
           </div>
 
-          {/* 2. Center: Clean, Spacious, Un-Cramped Navigation Deck */}
-          <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 shrink-0">
+          {/* 2. Center: Clean, Spacious Navigation Deck in exact requested hierarchy */}
+          <nav className="hidden xl:flex items-center gap-5 2xl:gap-6 shrink-0">
             
-            {/* Home */}
+            {/* 0. Home */}
             <button
               onClick={() => handleNav('home')}
               className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
@@ -240,7 +248,19 @@ export default function Navbar({ currentRoute, navigate }) {
               Home
             </button>
 
-            {/* Services Option Bar Trigger Button */}
+            {/* 1. About Us */}
+            <button
+              onClick={() => handleNav('about')}
+              className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
+                currentRoute === 'about'
+                  ? 'text-[var(--accent-blue)] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent-blue)] after:rounded-full after:shadow-[0_0_8px_rgba(0,194,255,0.8)]'
+                  : 'text-slate-200 hover:text-white'
+              }`}
+            >
+              About Us
+            </button>
+
+            {/* 2. Services Option Bar Trigger Button */}
             <button
               onClick={toggleServices}
               aria-expanded={servicesDropdownOpen}
@@ -261,7 +281,7 @@ export default function Navbar({ currentRoute, navigate }) {
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[var(--accent-blue)]' : 'text-slate-300'}`} />
             </button>
 
-            {/* Projects */}
+            {/* 3. Projects */}
             <button
               onClick={() => handleNav('projects')}
               className={`text-sm font-medium tracking-wide transition-all flex items-center gap-1.5 cursor-pointer py-1.5 relative ${
@@ -276,7 +296,7 @@ export default function Navbar({ currentRoute, navigate }) {
               </span>
             </button>
 
-            {/* Industries */}
+            {/* 4. Industries */}
             <button
               onClick={() => handleNav('industries')}
               className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
@@ -288,7 +308,7 @@ export default function Navbar({ currentRoute, navigate }) {
               Industries
             </button>
 
-            {/* Softwares */}
+            {/* 5. Softwares */}
             <button
               onClick={() => handleNav('softwares')}
               className={`text-sm font-medium tracking-wide transition-all flex items-center gap-1.5 cursor-pointer py-1.5 relative ${
@@ -303,32 +323,7 @@ export default function Navbar({ currentRoute, navigate }) {
               </span>
             </button>
 
-            {/* Security Scanner */}
-            <button
-              onClick={() => handleNav('security-scanner')}
-              className={`text-sm font-medium tracking-wide transition-all flex items-center gap-1.5 cursor-pointer py-1.5 relative ${
-                currentRoute === 'security-scanner'
-                  ? 'text-[var(--accent-blue)] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent-blue)] after:rounded-full after:shadow-[0_0_8px_rgba(0,194,255,0.8)]'
-                  : 'text-slate-200 hover:text-white'
-              }`}
-            >
-              <Shield className="w-3.5 h-3.5 text-[var(--accent-blue)] shrink-0" />
-              <span>Security</span>
-            </button>
-
-            {/* About Us */}
-            <button
-              onClick={() => handleNav('about')}
-              className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
-                currentRoute === 'about'
-                  ? 'text-[var(--accent-blue)] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent-blue)] after:rounded-full after:shadow-[0_0_8px_rgba(0,194,255,0.8)]'
-                  : 'text-slate-200 hover:text-white'
-              }`}
-            >
-              About Us
-            </button>
-
-            {/* Contact */}
+            {/* 6. Contact */}
             <button
               onClick={() => handleNav('contact')}
               className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
@@ -341,34 +336,20 @@ export default function Navbar({ currentRoute, navigate }) {
             </button>
           </nav>
 
-          {/* 3. Right: Action Deck (Theme Switcher, Hotline & Primary CTA) */}
+          {/* 3. Right: Action Deck (Contact Number, Start Button, & Theme Switcher) */}
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             
-            {/* Interactive Theme Switcher Toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle Dark and Light theme"
-              className="w-10 h-10 rounded-xl border border-[var(--border-color)] bg-[var(--btn-bg)] text-[var(--accent-blue)] hover:border-[var(--accent-blue)] hover:shadow-[0_0_18px_rgba(0,194,255,0.3)] transition-all cursor-pointer flex items-center justify-center hover:scale-105 active:scale-95 shrink-0"
-              title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4.5 h-4.5 text-amber-300" />
-              ) : (
-                <Moon className="w-4.5 h-4.5 text-sky-600" />
-              )}
-            </button>
-
-            {/* Sector 62 NOC Hotline Pill */}
+            {/* Sector 62 NOC Hotline Pill (Contact Number) */}
             <a
               href={companyInfo.socials.phone}
-              className="hidden 2xl:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)]/60 hover:text-[var(--accent-blue)] transition-all shadow-xs group shrink-0"
+              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)]/60 hover:text-[var(--accent-blue)] transition-all shadow-xs group shrink-0"
               title="Direct Sector 62 NOC Hotline: +91 88514 22486"
             >
               <Phone className="w-3.5 h-3.5 text-[var(--accent-blue)] group-hover:scale-110 transition-transform shrink-0" />
               <span>+91 88514 22486</span>
             </a>
 
-            {/* Primary Executive CTA Button */}
+            {/* Primary Start Button */}
             <button
               onClick={() => handleNav('contact')}
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-white bg-[var(--accent-blue)] hover:brightness-110 shadow-[0_4px_18px_rgba(0,194,255,0.4)] hover:shadow-[0_6px_25px_rgba(0,194,255,0.55)] transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 shrink-0"
@@ -376,7 +357,6 @@ export default function Navbar({ currentRoute, navigate }) {
               <span>Get Started</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
-
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -455,7 +435,7 @@ export default function Navbar({ currentRoute, navigate }) {
                       return (
                         <div
                           key={svc.id}
-                          onClick={() => handleNav('services')}
+                          onClick={() => handleNav(svc.slug || svc.id)}
                           className="group/item p-2.5 rounded-xl border border-transparent hover:border-[var(--accent-blue)]/35 hover:bg-[var(--btn-bg)]/80 transition-all cursor-pointer flex items-start gap-3"
                         >
                           <div className="p-2 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] text-[var(--accent-blue)] group-hover/item:bg-[var(--accent-blue)] group-hover/item:text-white group-hover/item:border-[var(--accent-blue)] group-hover/item:scale-105 transition-all shrink-0 mt-0.5 shadow-xs">
@@ -498,7 +478,7 @@ export default function Navbar({ currentRoute, navigate }) {
                       return (
                         <div
                           key={svc.id}
-                          onClick={() => handleNav('services')}
+                          onClick={() => handleNav(svc.slug || svc.id)}
                           className="group/item p-2.5 rounded-xl border border-transparent hover:border-[var(--accent-blue)]/35 hover:bg-[var(--btn-bg)]/80 transition-all cursor-pointer flex items-start gap-3"
                         >
                           <div className="p-2 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] text-[#38d6ff] group-hover/item:bg-[var(--accent-blue)] group-hover/item:text-white group-hover/item:border-[var(--accent-blue)] group-hover/item:scale-105 transition-all shrink-0 mt-0.5 shadow-xs">
@@ -541,7 +521,7 @@ export default function Navbar({ currentRoute, navigate }) {
                       return (
                         <div
                           key={svc.id}
-                          onClick={() => handleNav('services')}
+                          onClick={() => handleNav(svc.slug || svc.id)}
                           className="group/item p-2.5 rounded-xl border border-transparent hover:border-[var(--accent-blue)]/35 hover:bg-[var(--btn-bg)]/80 transition-all cursor-pointer flex items-start gap-3"
                         >
                           <div className="p-2 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] text-[var(--accent-blue)] group-hover/item:bg-[var(--accent-blue)] group-hover/item:text-white group-hover/item:border-[var(--accent-blue)] group-hover/item:scale-105 transition-all shrink-0 mt-0.5 shadow-xs">
@@ -660,20 +640,17 @@ export default function Navbar({ currentRoute, navigate }) {
             {/* Mobile Header Bar: Large Logo Only + Theme Switcher + Close (Zero Cramp, No NOC text) */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-[var(--border-color)] shrink-0">
               <div className="flex items-center shrink-0">
-                <TechProsLogo className="h-13 sm:h-14 w-auto object-contain" />
+                <button 
+                  onClick={() => handleNav('home')} 
+                  className="focus:outline-none cursor-pointer flex items-center group"
+                  aria-label="TechPros Home"
+                >
+                  <TechProsLogo className="h-13 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
+                </button>
               </div>
 
               {/* Right Mobile Drawer Controls */}
               <div className="flex items-center gap-2.5 shrink-0">
-                <button
-                  onClick={toggleTheme}
-                  aria-label="Toggle theme"
-                  className="w-10 h-10 rounded-xl border border-[var(--border-color)] bg-[var(--btn-bg)] text-[var(--accent-blue)] flex items-center justify-center transition-all cursor-pointer active:scale-95"
-                  title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-                >
-                  {theme === 'dark' ? <Sun className="w-4.5 h-4.5 text-amber-300" /> : <Moon className="w-4.5 h-4.5 text-sky-600" />}
-                </button>
-
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-10 h-10 rounded-xl border border-[var(--border-color)] hover:border-[var(--accent-blue)] bg-[var(--btn-bg)] text-[var(--text-secondary)] hover:text-[var(--accent-blue)] flex items-center justify-center transition-all cursor-pointer active:scale-95 shrink-0"
@@ -684,10 +661,10 @@ export default function Navbar({ currentRoute, navigate }) {
               </div>
             </div>
 
-            {/* Scrollable Mobile Navigation Links (Spacious Rows) */}
+            {/* Scrollable Mobile Navigation Links (Spacious Rows matching exact requested hierarchy) */}
             <div className="flex-1 overflow-y-auto overscroll-contain py-1 pr-1 space-y-2 no-scrollbar">
               
-              {/* Home */}
+              {/* 0. Home */}
               <button
                 onClick={() => handleNav('home')}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -697,13 +674,29 @@ export default function Navbar({ currentRoute, navigate }) {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <Globe className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
+                  <Home className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
                   <span className="text-sm font-medium">Home</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
               </button>
 
-              {/* Services Accordion Panel with Categorized Option Deck */}
+              {/* 1. About Us */}
+              <button
+                onClick={() => handleNav('about')}
+                className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                  currentRoute === 'about'
+                    ? 'bg-[var(--accent-blue)]/15 border-[var(--accent-blue)]/50 text-[var(--accent-blue)] font-bold'
+                    : 'bg-[var(--bg-panel-subtle)] border-[var(--border-color)] text-[var(--text-secondary)] hover:bg-[var(--btn-bg)] hover:text-[var(--text-primary)]'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <Building2 className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
+                  <span className="text-sm font-medium">About Us</span>
+                </div>
+                <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
+              </button>
+
+              {/* 2. Services Accordion Panel with Categorized Option Deck */}
               <div className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-panel-subtle)] overflow-hidden">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
@@ -736,7 +729,7 @@ export default function Navbar({ currentRoute, navigate }) {
                             return (
                               <button
                                 key={svc.id}
-                                onClick={() => handleNav('services')}
+                                onClick={() => handleNav(svc.slug || svc.id)}
                                 className="w-full text-left p-2 rounded-lg text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--btn-bg)] flex items-center justify-between gap-2 cursor-pointer transition-colors"
                               >
                                 <div className="flex items-center gap-2 truncate">
@@ -756,7 +749,7 @@ export default function Navbar({ currentRoute, navigate }) {
                 )}
               </div>
 
-              {/* Projects */}
+              {/* 3. Projects */}
               <button
                 onClick={() => handleNav('projects')}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -767,12 +760,12 @@ export default function Navbar({ currentRoute, navigate }) {
               >
                 <div className="flex items-center gap-3">
                   <Layers className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">Projects & Live Builds</span>
+                  <span className="text-sm font-medium">Projects</span>
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[var(--accent-blue)]/20 text-[var(--accent-blue)] font-bold">8 Live</span>
               </button>
 
-              {/* Industries */}
+              {/* 4. Industries */}
               <button
                 onClick={() => handleNav('industries')}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -783,12 +776,12 @@ export default function Navbar({ currentRoute, navigate }) {
               >
                 <div className="flex items-center gap-3">
                   <Compass className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">Industries Served</span>
+                  <span className="text-sm font-medium">Industries</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
               </button>
 
-              {/* Softwares */}
+              {/* 5. Softwares */}
               <button
                 onClick={() => handleNav('softwares')}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -799,44 +792,12 @@ export default function Navbar({ currentRoute, navigate }) {
               >
                 <div className="flex items-center gap-3">
                   <Laptop className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">Free Software Licenses</span>
+                  <span className="text-sm font-medium">Softwares</span>
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-bold">Free</span>
               </button>
 
-              {/* Security Scanner */}
-              <button
-                onClick={() => handleNav('security-scanner')}
-                className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                  currentRoute === 'security-scanner'
-                    ? 'bg-[var(--accent-blue)]/15 border-[var(--accent-blue)]/50 text-[var(--accent-blue)] font-bold'
-                    : 'bg-[var(--bg-panel-subtle)] border-[var(--border-color)] text-[var(--text-secondary)] hover:bg-[var(--btn-bg)] hover:text-[var(--text-primary)]'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <ShieldCheck className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">Security Scanner Tool</span>
-                </div>
-                <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
-              </button>
-
-              {/* About Us */}
-              <button
-                onClick={() => handleNav('about')}
-                className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                  currentRoute === 'about'
-                    ? 'bg-[var(--accent-blue)]/15 border-[var(--accent-blue)]/50 text-[var(--accent-blue)] font-bold'
-                    : 'bg-[var(--bg-panel-subtle)] border-[var(--border-color)] text-[var(--text-secondary)] hover:bg-[var(--btn-bg)] hover:text-[var(--text-primary)]'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <Building2 className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">About Us & Noida NOC</span>
-                </div>
-                <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
-              </button>
-
-              {/* Contact Desk */}
+              {/* 6. Contact */}
               <button
                 onClick={() => handleNav('contact')}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -847,7 +808,7 @@ export default function Navbar({ currentRoute, navigate }) {
               >
                 <div className="flex items-center gap-3">
                   <Mail className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
-                  <span className="text-sm font-medium">Contact & Scoping Desk</span>
+                  <span className="text-sm font-medium">Contact</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
               </button>
@@ -877,7 +838,7 @@ export default function Navbar({ currentRoute, navigate }) {
                 onClick={() => handleNav('contact')}
                 className="w-full py-3.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-white bg-[var(--accent-blue)] hover:brightness-110 shadow-[0_4px_16px_rgba(0,194,255,0.35)] flex items-center justify-center gap-2 cursor-pointer active:scale-95 transition-all"
               >
-                <span>Schedule Discovery Call</span>
+                <span>Get Started</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

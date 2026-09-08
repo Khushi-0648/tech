@@ -18,23 +18,23 @@ export default function HeroEditorialStagger({ navigate }) {
   const efficiencyGain = Math.round(teamSize * 18);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.04,
+        staggerChildren: 0.04,
+        delayChildren: 0.02,
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.35,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -56,7 +56,7 @@ export default function HeroEditorialStagger({ navigate }) {
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
           variants={containerVariants}
-          initial="hidden"
+          initial={false}
           animate="visible"
         >
 
@@ -263,6 +263,9 @@ export default function HeroEditorialStagger({ navigate }) {
                     <img 
                       src={dashboardImg} 
                       alt="TechPros Cloud NOC Telemetry & Kubernetes Management Dashboard" 
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
                       className="w-full h-[220px] sm:h-[240px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                     

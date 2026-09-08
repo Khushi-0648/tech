@@ -1,0 +1,376 @@
+{
+  "web-development": {
+    "slug": "web-development",
+    "heroTag": "Enterprise Web Architecture • Noida, UP",
+    "heroTitle": "High-Performance Web Development, Built for Speed, Scale & Security.",
+    "heroDesc": "What we do",
+    "trustBadges": [
+      "🛡️ ISO 27001 & OWASP Compliant",
+      "⚡ Sub-Second LCP Guarantee",
+      "📍 Noida NOC & Global Delivery"
+    ],
+    "consoleTab": "ArchitectureConfig.ts",
+    "consoleCode": "export const WebArchitectureConfig = {\n  hub: 'Noida-HQ / Global Edge',\n  stack: 'Next.js 15, React 19, PHP 8.3',\n  security: {\n    owaspCertified: true,\n    headers: 'HSTS, CSP, nosniff',\n    rateLimiting: 'Active-IP-Throttling'\n  },\n  seo: {\n    schemaOrg: true,\n    cwvScore: '100/100 Lighthouse'\n  },\n  slaUptime: '99.99% Cloud SLA'\n};",
+    "consoleStat": "All 12 Health Checks Passed (0.04s)",
+    "metrics": [],
+    "capabilities": [
+      {
+        "title": "Custom Web Applications",
+        "desc": "Bespoke web applications engineered with modern component architectures, reactive state management, and modular microservices designed for enterprise scalability.",
+        "tags": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "Built-in Technical SEO & Speed",
+        "desc": "Every line of code is optimized for search engines with semantic HTML5, Schema.org JSON-LD structured data, dynamic XML sitemaps, and sub-second Core Web Vitals.",
+        "tags": [
+          "Core Web Vitals",
+          "Schema JSON-LD",
+          "SSR / SSG",
+          "Edge CDN"
+        ]
+      },
+      {
+        "title": "Bank-Grade Web Security",
+        "desc": "Proactive OWASP Top 10 mitigation, WAF rule configuration, CSRF/XSS tokenization, automated penetration testing, rate-limiting, and encrypted credential storage.",
+        "tags": [
+          "OWASP Hardened",
+          "Penetration Tested",
+          "SSL / TLS",
+          "Zero-Trust"
+        ]
+      },
+      {
+        "title": "Cloud DevOps & Elastic Scale",
+        "desc": "Automated CI/CD deployment pipelines, containerized environments, auto-scaling Kubernetes clusters, and multi-region disaster recovery on AWS, GCP, and Azure.",
+        "tags": [
+          "Docker",
+          "Kubernetes",
+          "AWS / Azure",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "title": "E-Commerce & Enterprise Portals",
+        "desc": "High-conversion checkout flows, custom ERP/CRM platform integrations, role-based client dashboards, and secure payment gateway integrations with zero latency.",
+        "tags": [
+          "WooCommerce",
+          "Stripe / Razorpay",
+          "ERP / CRM",
+          "REST & GraphQL"
+        ]
+      },
+      {
+        "title": "24/7 Monitoring & SLA Support",
+        "desc": "Continuous uptime tracking, real-time error logging, proactive vulnerability patching, database indexing tuning, and guaranteed SLA response times from our Noida tech center.",
+        "tags": [
+          "24/7 Monitoring",
+          "Patch Management",
+          "Database Tuning",
+          "Dedicated SLA"
+        ]
+      },
+      {
+        "title": "Indian Kitchen",
+        "desc": "Modern culinary ordering experience built with React & Tailwind CSS. Features dynamic menu browsing, category filtering, and fluid entrance animations.",
+        "tags": [
+          "100 PageSpeed",
+          "Sub-second TTFB",
+          "Fluid Motion",
+          "React 18",
+          "Vite"
+        ]
+      },
+      {
+        "title": "Discovery & Blueprint",
+        "desc": "We analyze user journeys, technical constraints, security parameters, and data architecture.",
+        "tags": []
+      },
+      {
+        "title": "UX & System Design",
+        "desc": "Interactive high-fidelity prototypes, responsive layouts, and accessible UI component systems.",
+        "tags": []
+      },
+      {
+        "title": "Secure Full-Stack Dev",
+        "desc": "Clean, modular code execution with strict typing, API contracts, and zero placeholders.",
+        "tags": []
+      },
+      {
+        "title": "QA & Security Audit",
+        "desc": "Rigorous unit tests, E2E validation, CWV performance auditing, and OWASP penetration testing.",
+        "tags": []
+      },
+      {
+        "title": "Cloud Launch & Scale",
+        "desc": "Zero-downtime deployment, CI/CD pipeline automation, and 24/7 performance monitoring.",
+        "tags": []
+      }
+    ],
+    "archHeading": "Zero Placeholders. Zero Security Flaws. Built to Scale.",
+    "archDesc": "We do not rely on bloated, slow pre-made WordPress themes. We write lean, modular, typed code adhering strictly to modern security frameworks and performance budgets.",
+    "archFeatures": [
+      {
+        "title": "Type-Safe & Clean Code Architecture",
+        "desc": ""
+      },
+      {
+        "title": "Type-Safe & Clean Code Architecture",
+        "desc": ""
+      },
+      {
+        "title": "Full OWASP WSTG v4.2 Pentest Compliance",
+        "desc": ""
+      },
+      {
+        "title": "Autonomous SEO Architecture",
+        "desc": ""
+      }
+    ],
+    "techStack": [
+      {
+        "name": "React & Next.js",
+        "desc": "Server-Side Rendering & Jamstack"
+      },
+      {
+        "name": "TypeScript",
+        "desc": "Enterprise Type Safety & Scalability"
+      },
+      {
+        "name": "Node.js & Python",
+        "desc": "High-Throughput Microservices"
+      },
+      {
+        "name": "Modern PHP 8.3",
+        "desc": "Headless WordPress & REST APIs"
+      },
+      {
+        "name": "PostgreSQL & Redis",
+        "desc": "Performant Relational Data & Caching"
+      },
+      {
+        "name": "Docker & Kubernetes",
+        "desc": "Containerized Orchestration"
+      },
+      {
+        "name": "AWS & Cloudflare",
+        "desc": "Global Edge Acceleration & WAF"
+      },
+      {
+        "name": "Tailwind CSS",
+        "desc": "Zero-Runtime Design Systems"
+      }
+    ],
+    "processStages": [
+      {
+        "num": "01",
+        "title": "Discovery & Blueprint",
+        "desc": "We analyze user journeys, technical constraints, security parameters, and data architecture."
+      },
+      {
+        "num": "02",
+        "title": "UX & System Design",
+        "desc": "Interactive high-fidelity prototypes, responsive layouts, and accessible UI component systems."
+      },
+      {
+        "num": "03",
+        "title": "Secure Full-Stack Dev",
+        "desc": "Clean, modular code execution with strict typing, API contracts, and zero placeholders."
+      },
+      {
+        "num": "04",
+        "title": "QA & Security Audit",
+        "desc": "Rigorous unit tests, E2E validation, CWV performance auditing, and OWASP penetration testing."
+      },
+      {
+        "num": "05",
+        "title": "Cloud Launch & Scale",
+        "desc": "Zero-downtime deployment, CI/CD pipeline automation, and 24/7 performance monitoring."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How does TechPros ensure our website is fast and fully SEO optimized?",
+        "a": "We build our web applications using lightweight, clean-coded architectures (Next.js, modern PHP, Tailwind CSS) with built-in Schema.org JSON-LD structured data, automatic XML sitemaps, Open Graph metadata, semantic HTML5 hierarchy, and CDN caching to guarantee 95+ Google PageSpeed and sub-second Core Web Vitals."
+      },
+      {
+        "q": "What security measures are implemented in your web development projects?",
+        "a": "Security is integrated at every tier. We enforce OWASP Top 10 mitigation, strict HTTP security headers (CSP, HSTS, X-Content-Type-Options), rate-limiting against DDoS and brute force, prepared database statements against SQLi, input sanitization against XSS, and end-to-end SSL/TLS encryption."
+      },
+      {
+        "q": "Can you integrate custom APIs, ERPs, CRMs, or legacy systems?",
+        "a": "Yes. We build custom REST and GraphQL API gateways, webhook listeners, and background sync workers that seamlessly connect your web application to Salesforce, HubSpot, SAP, custom internal databases, and third-party payment gateways."
+      },
+      {
+        "q": "Where is your development and support team located?",
+        "a": "Our core engineering headquarters and Network Operations Center (NOC) is located in Sector 62, Noida, Uttar Pradesh, India, with 24/7 global delivery capabilities supporting clients worldwide."
+      }
+    ]
+  },
+  "artificial-intelligence-and-automation": {
+    "slug": "artificial-intelligence-and-automation",
+    "heroTag": "Enterprise AI Automation Solutions",
+    "heroTitle": "Artificial Intelligence and Automation",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const artificial-intelligence-and-automationEngine = {\n  domain: 'Artificial Intelligence and Automation',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "business-analytics": {
+    "slug": "business-analytics",
+    "heroTag": "Enterprise Business Analytics Services",
+    "heroTitle": "Business Analytics",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const business-analyticsEngine = {\n  domain: 'Business Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "cloud-infrastructure": {
+    "slug": "cloud-infrastructure",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Cloud Infrastructure",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const cloud-infrastructureEngine = {\n  domain: 'Cloud Infrastructure',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "consulting-operations": {
+    "slug": "consulting-operations",
+    "heroTag": "Know more about our",
+    "heroTitle": "Consulting & Operations",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const consulting-operationsEngine = {\n  domain: 'Consulting & Operations',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "cybersecurity": {
+    "slug": "cybersecurity",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Cybersecurity",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const cybersecurityEngine = {\n  domain: 'Cybersecurity',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "data-analytics": {
+    "slug": "data-analytics",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Data Analytics",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const data-analyticsEngine = {\n  domain: 'Data Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "enterprise-solutions": {
+    "slug": "enterprise-solutions",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Enterprise Solutions",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const enterprise-solutionsEngine = {\n  domain: 'Enterprise Solutions',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "industrial-autonomy-and-engineering": {
+    "slug": "industrial-autonomy-and-engineering",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Industrial Autonomy and Engineering",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const industrial-autonomy-and-engineeringEngine = {\n  domain: 'Industrial Autonomy and Engineering',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  },
+  "network-solutions-and-services": {
+    "slug": "network-solutions-and-services",
+    "heroTag": "Know More About Our",
+    "heroTitle": "Network Solutions and Services",
+    "heroDesc": "What we do",
+    "trustBadges": [],
+    "consoleTab": "ServiceArchitecture.ts",
+    "consoleCode": "export const network-solutions-and-servicesEngine = {\n  domain: 'Network Solutions and Services',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleStat": "",
+    "metrics": [],
+    "capabilities": [],
+    "archHeading": "",
+    "archDesc": "",
+    "archFeatures": [],
+    "techStack": [],
+    "processStages": [],
+    "faqs": []
+  }
+}

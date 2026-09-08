@@ -58,13 +58,25 @@ export default function HomePage({ navigate }) {
   const [isCaseMouseDown, setIsCaseMouseDown] = useState(false);
   const caseStartX = useRef(0);
   const caseScrollLeftPos = useRef(0);
+  const isCaseStudyInitialMount = useRef(true);
 
-  // Smoothly center the active case study card in the horizontal slider
+  // Smoothly center the active case study card in the horizontal slider (ONLY on user interaction, NEVER on initial page load)
   useEffect(() => {
+    if (isCaseStudyInitialMount.current) {
+      isCaseStudyInitialMount.current = false;
+      return;
+    }
     if (!caseStudySliderRef.current) return;
     const activeEl = caseStudySliderRef.current.querySelector(`[data-case-id="${selectedCaseStudyId}"]`);
     if (activeEl) {
-      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      const slider = caseStudySliderRef.current;
+      const cardOffset = activeEl.offsetLeft;
+      const cardWidth = activeEl.offsetWidth;
+      const sliderWidth = slider.offsetWidth;
+      slider.scrollTo({
+        left: cardOffset - (sliderWidth / 2) + (cardWidth / 2),
+        behavior: 'smooth'
+      });
     }
   }, [selectedCaseStudyId]);
 

@@ -7,6 +7,7 @@ import {
   Clock, ShieldAlert, Zap
 } from 'lucide-react';
 import { servicesData, companyInfo } from '../data/siteData';
+import { campusImg } from '../assets/images';
 
 const iconMap = {
   Code2,
@@ -170,7 +171,10 @@ export default function ServicesPage({ navigate }) {
                 >
                   {/* Visual Service Architectural Banner */}
                   {service.image && (
-                    <div className="relative -mx-7 -mt-7 mb-6 h-44 overflow-hidden rounded-t-2xl border-b border-slate-200 bg-slate-100">
+                    <div 
+                      onClick={() => navigate(service.slug || service.id)}
+                      className="relative -mx-7 -mt-7 mb-6 h-44 overflow-hidden rounded-t-2xl border-b border-slate-200 bg-slate-100 cursor-pointer"
+                    >
                       <img 
                         src={service.image} 
                         alt={service.title} 
@@ -187,7 +191,10 @@ export default function ServicesPage({ navigate }) {
                   <div>
                     {/* Icon & ID Header */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-sm bg-blue-50 border border-blue-200 text-blue-600 group-hover:bg-blue-600 group-hover:text-white">
+                      <div 
+                        onClick={() => navigate(service.slug || service.id)}
+                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-sm bg-blue-50 border border-blue-200 text-blue-600 group-hover:bg-blue-600 group-hover:text-white cursor-pointer"
+                      >
                         <Icon className="w-6 h-6" />
                       </div>
                       {!service.image && (
@@ -198,7 +205,10 @@ export default function ServicesPage({ navigate }) {
                     </div>
 
                     {/* Title & Short Desc */}
-                    <h3 className="text-xl font-display font-bold text-[#0A0F2E] group-hover:text-blue-600 transition-colors mb-3">
+                    <h3 
+                      onClick={() => navigate(service.slug || service.id)}
+                      className="text-xl font-display font-bold text-[#0A0F2E] group-hover:text-blue-600 transition-colors mb-3 cursor-pointer"
+                    >
                       {service.title}
                     </h3>
                     <p className="text-sm leading-relaxed mb-6 font-sans text-slate-600">
@@ -250,10 +260,10 @@ export default function ServicesPage({ navigate }) {
                   {/* Card Action Footer */}
                   <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                     <button
-                      onClick={() => setActiveModalService(service)}
-                      className="text-xs font-mono flex items-center gap-1 transition-colors cursor-pointer font-semibold text-blue-600 hover:text-blue-800"
+                      onClick={() => navigate(service.slug || service.id)}
+                      className="text-xs font-mono flex items-center gap-1 transition-colors cursor-pointer font-bold text-blue-600 hover:text-blue-800"
                     >
-                      <span>View Blueprint Specs</span>
+                      <span>Explore Dedicated Page</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
 
@@ -282,9 +292,14 @@ export default function ServicesPage({ navigate }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl card-dark-uniform p-8 sm:p-12 shadow-2xl border border-[#1a2a5e]"
+            className="relative rounded-3xl card-dark-uniform p-8 sm:p-12 shadow-2xl border border-[#1a2a5e] overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Ambient Noida Campus Visual */}
+            <div 
+              className="absolute right-0 top-0 bottom-0 w-1/3 bg-cover bg-center opacity-15 pointer-events-none hidden lg:block"
+              style={{ backgroundImage: `url(${campusImg})` }}
+            />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8">
                 <div className="badge-dark-pill inline-flex items-center gap-2 px-3 py-1 rounded-full text-[#00C2FF] font-mono text-xs uppercase mb-4 font-semibold shadow-xs">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#00C2FF]" />

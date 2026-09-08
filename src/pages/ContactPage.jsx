@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, Send, CheckCircle2, ShieldCheck, 
   Terminal, Sparkles, Clock, Globe, MessageSquare, Building, 
-  User, AtSign, Briefcase, HelpCircle, ArrowRight
+  User, AtSign, Briefcase, HelpCircle, ArrowRight, Building2
 } from 'lucide-react';
 import { companyInfo, faqList } from '../data/siteData';
+import { campusImg } from '../assets/images';
 
 export default function ContactPage({ navigate }) {
   const [inquiryType, setInquiryType] = useState('Web Engineering');
@@ -395,54 +396,36 @@ export default function ContactPage({ navigate }) {
                 </div>
               </motion.div>
 
-              {/* Quick Actions Card - Uniform Light Card */}
+              {/* Sector 62 Engineering Command Center Visual Card */}
               <motion.div 
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.65, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-3xl card-light-uniform p-6 shadow-xl border border-slate-200 bg-white"
+                className="rounded-3xl card-light-uniform overflow-hidden shadow-xl border border-slate-200 bg-white group"
               >
-                <h5 className="text-base font-display font-bold text-[#0A0F2E] mb-3">
-                  Looking for Immediate Tools?
-                </h5>
-                
-                <div className="space-y-3">
-                  <button
-                    onClick={() => navigate('security-scanner')}
-                    className="w-full p-3 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-left transition-all flex items-center justify-between group cursor-pointer"
-                  >
-                    <div className="flex items-center gap-3">
-                      <ShieldCheck className="w-5 h-5 text-blue-600" />
-                      <div>
-                        <div className="text-xs font-mono font-bold text-[#0A0F2E] group-hover:text-blue-700">
-                          Run Warden Security Scanner
-                        </div>
-                        <div className="text-[11px] text-slate-500">
-                          Test your domain's OWASP security live
-                        </div>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-1" />
-                  </button>
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-100">
+                  <img 
+                    src={campusImg} 
+                    alt="TechPros Noida Engineering Center, Sector 62" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F2E]/90 via-[#0A0F2E]/35 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-blue-200 text-[10px] font-mono font-bold text-blue-700 flex items-center gap-1.5 shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Sector 62 Campus &bull; Active Command Floor</span>
+                  </div>
 
-                  <button
-                    onClick={() => navigate('softwares')}
-                    className="w-full p-3 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-left transition-all flex items-center justify-between group cursor-pointer"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Sparkles className="w-5 h-5 text-blue-600" />
-                      <div>
-                        <div className="text-xs font-mono font-bold text-[#0A0F2E] group-hover:text-blue-700">
-                          Download Free Software
-                        </div>
-                        <div className="text-[11px] text-slate-500">
-                          Get free licenses for Invio &amp; Warden
-                        </div>
-                      </div>
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
+                    <div className="text-sm font-display font-bold text-white flex items-center gap-1.5 mb-1">
+                      <Building2 className="w-4 h-4 text-[#00C2FF]" />
+                      <span>Logix Cyber Park &bull; Tower B</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-1" />
-                  </button>
+                    <div className="text-xs text-slate-200 font-sans leading-relaxed">
+                      180+ Full-Time Systems Architects &bull; ISO 27001 Certified Global Delivery Pods
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
