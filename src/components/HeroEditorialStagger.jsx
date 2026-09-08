@@ -110,17 +110,17 @@ export default function HeroEditorialStagger({ navigate }) {
 
               <button
                 onClick={() => navigate('services')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-medium text-sm text-slate-200 bg-[#0c1330] hover:bg-[#121c46] border border-[#1a2656] hover:border-[#00C2FF] hover:text-[#00C2FF] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-medium text-sm text-white bg-[#0c1330] hover:bg-[#121c46] border border-[#1a2656] hover:border-[#00C2FF] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <span>Explore 10 Domains</span>
-                <Layers className="w-4 h-4 text-[#00C2FF]" />
+                <Layers className="w-4 h-4 text-white" />
               </button>
 
               <button
                 onClick={() => navigate('security-scanner')}
-                className="w-full sm:w-auto px-5 py-3.5 rounded-xl font-mono text-xs font-semibold text-[#00C2FF] bg-[#0c1330] hover:bg-[#121c46] border border-[#1a2656] hover:border-[#00C2FF] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto px-5 py-3.5 rounded-xl font-mono text-xs font-semibold text-white bg-[#0c1330] hover:bg-[#121c46] border border-[#1a2656] hover:border-[#00C2FF] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
               >
-                <Zap className="w-4 h-4 text-[#00C2FF]" />
+                <Zap className="w-4 h-4 text-white" />
                 <span>Run Live Security Scan &rarr;</span>
               </button>
             </motion.div>

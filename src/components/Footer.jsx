@@ -56,26 +56,26 @@ export default function Footer({ navigate }) {
                   href={companyInfo.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-[#0c1438] border border-[#1a2656] flex items-center justify-center text-slate-400 hover:text-[var(--accent-blue)] hover:border-[var(--accent-blue)] transition-all shadow-xs"
+                  className="w-9 h-9 rounded-lg bg-[#0c1438] border border-[#1a2656] flex items-center justify-center text-white hover:text-white hover:border-[var(--accent-blue)] transition-all shadow-xs"
                   aria-label="LinkedIn"
                 >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                   </svg>
                 </a>
                 <a
                   href={companyInfo.socials.phone}
-                  className="w-9 h-9 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent-blue)] hover:border-[var(--accent-blue)] transition-all shadow-xs"
+                  className="w-9 h-9 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] flex items-center justify-center text-white hover:text-white hover:border-[var(--accent-blue)] transition-all shadow-xs"
                   aria-label="Phone"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href={companyInfo.socials.email}
-                  className="w-9 h-9 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent-blue)] hover:border-[var(--accent-blue)] transition-all shadow-xs"
+                  className="w-9 h-9 rounded-lg bg-[var(--btn-bg)] border border-[var(--border-color)] flex items-center justify-center text-white hover:text-white hover:border-[var(--accent-blue)] transition-all shadow-xs"
                   aria-label="Email"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-white" />
                 </a>
               </div>
 

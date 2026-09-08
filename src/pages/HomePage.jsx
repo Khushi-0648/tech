@@ -482,9 +482,9 @@ export default function HomePage({ navigate }) {
                 <button
                   key={svc.id}
                   onClick={() => navigate('services')}
-                  className="px-4 py-2.5 rounded-full bg-[#0c1438] border border-[var(--accent-blue)]/25 hover:border-[var(--accent-blue)] hover:bg-[#101b4c] text-slate-300 hover:text-[var(--accent-blue)] text-xs font-mono font-semibold flex items-center gap-2 transition-all cursor-pointer group shadow-sm hover:shadow-[0_4px_16px_rgba(0,194,255,0.15)] hover:-translate-y-0.5"
+                  className="px-4 py-2.5 rounded-full bg-[#0c1438] border border-[var(--accent-blue)]/25 hover:border-[var(--accent-blue)] hover:bg-[#101b4c] text-white text-xs font-mono font-semibold flex items-center gap-2 transition-all cursor-pointer group shadow-sm hover:shadow-[0_4px_16px_rgba(0,194,255,0.15)] hover:-translate-y-0.5"
                 >
-                  <IconComponent className="w-3.5 h-3.5 text-[var(--accent-blue)] group-hover:scale-110 transition-transform" />
+                  <IconComponent className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
                   <span>{svc.title}</span>
                 </button>
               );
@@ -1093,7 +1093,7 @@ export default function HomePage({ navigate }) {
 
             <button
               onClick={() => navigate('industries')}
-              className="px-6 py-3 rounded-xl border border-[var(--accent-blue)]/40 text-[var(--accent-blue)] hover:bg-[#0a1438] bg-[#070e28] font-mono text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer shadow-sm transform hover:-translate-y-0.5 active:translate-y-0"
+              className="px-6 py-3 rounded-xl border border-[var(--accent-blue)]/40 text-white hover:bg-[#0a1438] bg-[#070e28] font-mono text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer shadow-sm transform hover:-translate-y-0.5 active:translate-y-0"
             >
               View All 8 Sectors &rarr;
             </button>
@@ -1760,9 +1760,9 @@ export default function HomePage({ navigate }) {
 
             <a
               href={companyInfo.socials.phone}
-              className="px-7 py-4 rounded-xl font-mono text-sm font-semibold text-[#00C2FF] bg-[#070e28] border border-[#1a2a5e] hover:bg-[#0c1844] transition-all flex items-center gap-2 shadow-xs"
+              className="px-7 py-4 rounded-xl font-mono text-sm font-semibold text-white bg-[#070e28] border border-[#1a2a5e] hover:bg-[#0c1844] transition-all flex items-center gap-2 shadow-xs"
             >
-              <Phone className="w-4 h-4 text-[#00C2FF]" />
+              <Phone className="w-4 h-4 text-white" />
               <span>{companyInfo.phone}</span>
             </a>
           </div>

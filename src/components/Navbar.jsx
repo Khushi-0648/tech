@@ -342,10 +342,10 @@ export default function Navbar({ currentRoute, navigate }) {
             {/* Sector 62 NOC Hotline Pill (Contact Number) */}
             <a
               href={companyInfo.socials.phone}
-              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold text-[var(--text-primary)] border border-[var(--border-color)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)]/60 hover:text-[var(--accent-blue)] transition-all shadow-xs group shrink-0"
+              className="hidden xl:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold text-white border border-[var(--border-color)] bg-[var(--btn-bg)] hover:border-[var(--accent-blue)]/60 hover:text-white transition-all shadow-xs group shrink-0"
               title="Direct Sector 62 NOC Hotline: +91 88514 22486"
             >
-              <Phone className="w-3.5 h-3.5 text-[var(--accent-blue)] group-hover:scale-110 transition-transform shrink-0" />
+              <Phone className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform shrink-0" />
               <span>+91 88514 22486</span>
             </a>
 
@@ -820,16 +820,16 @@ export default function Navbar({ currentRoute, navigate }) {
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={companyInfo.socials.phone}
-                  className="py-2.5 px-3 rounded-xl text-xs font-mono font-bold text-[var(--accent-blue)] border border-[var(--accent-blue)]/30 bg-[var(--btn-bg)] hover:brightness-110 flex items-center justify-center gap-1.5 transition-colors min-w-0"
+                  className="py-2.5 px-3 rounded-xl text-xs font-mono font-bold text-white border border-[var(--accent-blue)]/30 bg-[var(--btn-bg)] hover:brightness-110 flex items-center justify-center gap-1.5 transition-colors min-w-0"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[var(--accent-blue)] shrink-0" />
+                  <Phone className="w-3.5 h-3.5 text-white shrink-0" />
                   <span className="truncate">+91 88514 22486</span>
                 </a>
                 <a
                   href={companyInfo.socials.email}
-                  className="py-2.5 px-3 rounded-xl text-xs font-mono font-bold text-[var(--text-secondary)] border border-[var(--border-color)] bg-[var(--btn-bg)] hover:text-[var(--accent-blue)] flex items-center justify-center gap-1.5 transition-colors min-w-0"
+                  className="py-2.5 px-3 rounded-xl text-xs font-mono font-bold text-white border border-[var(--border-color)] bg-[var(--btn-bg)] hover:text-white flex items-center justify-center gap-1.5 transition-colors min-w-0"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[var(--accent-blue)] shrink-0" />
+                  <Mail className="w-3.5 h-3.5 text-white shrink-0" />
                   <span className="truncate">Email NOC</span>
                 </a>
               </div>

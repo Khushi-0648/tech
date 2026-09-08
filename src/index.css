@@ -648,19 +648,47 @@ html {
 }
 
 /* ==========================================================================
-   Light Blue Button Pure White Text & Mobile Polish Guarantee
+   Universal Blue Button Pure White Text Guarantee (Light Blue & Dark Blue)
    ========================================================================== */
-/* Force pure white text on all light blue / cyan / sky / accent-blue buttons & links */
+/* Force pure white text on ALL blue buttons and button-links across the entire website */
 button[class*="bg-[#00C2FF]"],
 a[class*="bg-[#00C2FF]"],
 button[class*="bg-[#0090e7]"],
 a[class*="bg-[#0090e7]"],
+button[class*="bg-[#38d6ff]"],
+a[class*="bg-[#38d6ff]"],
+button[class*="bg-[#05081A]"],
+a[class*="bg-[#05081A]"],
+button[class*="bg-[#080e28]"],
+a[class*="bg-[#080e28]"],
+button[class*="bg-[#0c1330]"],
+a[class*="bg-[#0c1330]"],
+button[class*="bg-[#0c1438]"],
+a[class*="bg-[#0c1438]"],
+button[class*="bg-[#070e28]"],
+a[class*="bg-[#070e28]"],
+button[class*="bg-[#0a1438]"],
+a[class*="bg-[#0a1438]"],
+button[class*="bg-[#0c1844]"],
+a[class*="bg-[#0c1844]"],
+button[class*="bg-[#101b44]"],
+a[class*="bg-[#101b44]"],
+button[class*="bg-[#101b4c]"],
+a[class*="bg-[#101b4c]"],
+button[class*="bg-[#121c46]"],
+a[class*="bg-[#121c46]"],
 button[class*="bg-[var(--accent-blue)]"],
 a[class*="bg-[var(--accent-blue)]"],
+button[class*="bg-[var(--btn-bg)]"],
+a[class*="bg-[var(--btn-bg)]"],
+button[class*="bg-blue-"],
+a[class*="bg-blue-"],
 button[class*="bg-cyan-"],
 a[class*="bg-cyan-"],
 button[class*="bg-sky-"],
-a[class*="bg-sky-"] {
+a[class*="bg-sky-"],
+button[class*="bg-indigo-"],
+a[class*="bg-indigo-"] {
   color: #ffffff !important;
 }
 
@@ -668,8 +696,40 @@ button[class*="bg-[#00C2FF]"] *,
 a[class*="bg-[#00C2FF]"] *,
 button[class*="bg-[#0090e7]"] *,
 a[class*="bg-[#0090e7]"] *,
+button[class*="bg-[#38d6ff]"] *,
+a[class*="bg-[#38d6ff]"] *,
+button[class*="bg-[#05081A]"] *,
+a[class*="bg-[#05081A]"] *,
+button[class*="bg-[#080e28]"] *,
+a[class*="bg-[#080e28]"] *,
+button[class*="bg-[#0c1330]"] *,
+a[class*="bg-[#0c1330]"] *,
+button[class*="bg-[#0c1438]"] *,
+a[class*="bg-[#0c1438]"] *,
+button[class*="bg-[#070e28]"] *,
+a[class*="bg-[#070e28]"] *,
+button[class*="bg-[#0a1438]"] *,
+a[class*="bg-[#0a1438]"] *,
+button[class*="bg-[#0c1844]"] *,
+a[class*="bg-[#0c1844]"] *,
+button[class*="bg-[#101b44]"] *,
+a[class*="bg-[#101b44]"] *,
+button[class*="bg-[#101b4c]"] *,
+a[class*="bg-[#101b4c]"] *,
+button[class*="bg-[#121c46]"] *,
+a[class*="bg-[#121c46]"] *,
 button[class*="bg-[var(--accent-blue)]"] *,
-a[class*="bg-[var(--accent-blue)]"] * {
+a[class*="bg-[var(--accent-blue)]"] *,
+button[class*="bg-[var(--btn-bg)]"] *,
+a[class*="bg-[var(--btn-bg)]"] *,
+button[class*="bg-blue-"] *,
+a[class*="bg-blue-"] *,
+button[class*="bg-cyan-"] *,
+a[class*="bg-cyan-"] *,
+button[class*="bg-sky-"] *,
+a[class*="bg-sky-"] *,
+button[class*="bg-indigo-"] *,
+a[class*="bg-indigo-"] * {
   color: #ffffff !important;
 }
 

@@ -322,7 +322,7 @@ export default function ServicesPage({ navigate }) {
                 </button>
                 <a
                   href={companyInfo.socials.phone}
-                  className="w-full px-6 py-3.5 rounded-xl font-mono text-xs font-semibold text-[#00C2FF] bg-[#070e28] hover:bg-[#0c1844] border border-[#1a2a5e] transition-all flex items-center justify-center gap-2 shadow-xs"
+                  className="w-full px-6 py-3.5 rounded-xl font-mono text-xs font-semibold text-white bg-[#070e28] hover:bg-[#0c1844] border border-[#1a2a5e] transition-all flex items-center justify-center gap-2 shadow-xs"
                 >
                   <span>Call Noida NOC Direct</span>
                 </a>
