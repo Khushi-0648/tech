@@ -115,14 +115,6 @@ export default function HeroEditorialStagger({ navigate }) {
                 <span>Explore 10 Domains</span>
                 <Layers className="w-4 h-4 text-white" />
               </button>
-
-              <button
-                onClick={() => navigate('security-scanner')}
-                className="w-full sm:w-auto px-5 py-3.5 rounded-xl font-mono text-xs font-semibold text-white bg-[#0c1330] hover:bg-[#121c46] border border-[#1a2656] hover:border-[#00C2FF] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-              >
-                <Zap className="w-4 h-4 text-white" />
-                <span>Run Live Security Scan &rarr;</span>
-              </button>
             </motion.div>
 
             {/* Stagger Item 5: Hero Stats Ticker Matrix (Permanent Dark Theme) */}

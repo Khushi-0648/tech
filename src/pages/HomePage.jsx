@@ -355,7 +355,7 @@ export default function HomePage({ navigate }) {
                         setTechCategory(cat.id);
                         setTimeout(checkSliderScroll, 50);
                       }}
-                      className={`px-3 py-1 rounded-lg font-mono text-xs transition-all cursor-pointer ${
+                      className={`px-3.5 py-2 min-h-[44px] min-w-[44px] rounded-lg font-mono text-xs transition-all cursor-pointer flex items-center justify-center ${
                         isActive
                           ? 'bg-[#0090e7] text-white font-bold shadow-xs'
                           : 'text-slate-600 hover:text-[#0A0F2E]'
@@ -374,7 +374,7 @@ export default function HomePage({ navigate }) {
                   disabled={!canScrollLeft}
                   title="Previous"
                   aria-label="Previous"
-                  className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 ${
+                  className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl border transition-all cursor-pointer flex items-center justify-center active:scale-95 ${
                     canScrollLeft
                       ? 'bg-white border-slate-300 text-blue-600 hover:bg-slate-50 shadow-xs'
                       : 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed'
@@ -387,7 +387,7 @@ export default function HomePage({ navigate }) {
                   disabled={!canScrollRight}
                   title="Next"
                   aria-label="Next"
-                  className={`p-2 rounded-xl border transition-all cursor-pointer active:scale-95 ${
+                  className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl border transition-all cursor-pointer flex items-center justify-center active:scale-95 ${
                     canScrollRight
                       ? 'bg-white border-slate-300 text-blue-600 hover:bg-slate-50 shadow-xs'
                       : 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed'
@@ -705,7 +705,7 @@ export default function HomePage({ navigate }) {
                 <button
                   onClick={handlePrevCaseStudy}
                   title="Previous Architecture"
-                  className="p-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                   aria-label="Previous Case Study"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -713,7 +713,7 @@ export default function HomePage({ navigate }) {
                 <button
                   onClick={handleNextCaseStudy}
                   title="Next Architecture"
-                  className="p-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 transition-all cursor-pointer active:scale-95"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                   aria-label="Next Case Study"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -803,7 +803,7 @@ export default function HomePage({ navigate }) {
                     <button
                       onClick={handlePrevCaseStudy}
                       aria-label="Previous Architecture"
-                      className="pointer-events-auto w-9 h-9 rounded-full bg-white/90 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
+                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
                     >
                       <ChevronLeft className="w-4 h-4" />
                     </button>
@@ -812,7 +812,7 @@ export default function HomePage({ navigate }) {
                     <button
                       onClick={handleNextCaseStudy}
                       aria-label="Next Architecture"
-                      className="pointer-events-auto w-9 h-9 rounded-full bg-white/90 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
+                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
                     >
                       <ChevronRight className="w-4 h-4" />
                     </button>
@@ -1631,8 +1631,10 @@ export default function HomePage({ navigate }) {
               <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">First Name *</label>
+                    <label htmlFor="hp-first-name" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">First Name *</label>
                     <input
+                      id="hp-first-name"
+                      name="firstName"
                       type="text"
                       required
                       value={formData.firstName}
@@ -1642,8 +1644,10 @@ export default function HomePage({ navigate }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Last Name *</label>
+                    <label htmlFor="hp-last-name" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Last Name *</label>
                     <input
+                      id="hp-last-name"
+                      name="lastName"
                       type="text"
                       required
                       value={formData.lastName}
@@ -1656,8 +1660,10 @@ export default function HomePage({ navigate }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Business Email *</label>
+                    <label htmlFor="hp-email" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Business Email *</label>
                     <input
+                      id="hp-email"
+                      name="email"
                       type="email"
                       required
                       value={formData.email}
@@ -1667,8 +1673,10 @@ export default function HomePage({ navigate }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Company Name</label>
+                    <label htmlFor="hp-company" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Company Name</label>
                     <input
+                      id="hp-company"
+                      name="company"
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -1679,8 +1687,10 @@ export default function HomePage({ navigate }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Service You're Interested In</label>
+                  <label htmlFor="hp-service" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Service You're Interested In</label>
                   <select
+                    id="hp-service"
+                    name="service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 font-mono text-sm focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 outline-none cursor-pointer"
@@ -1697,8 +1707,10 @@ export default function HomePage({ navigate }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Project Details &amp; Requirements</label>
+                  <label htmlFor="hp-message" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">Project Details &amp; Requirements</label>
                   <textarea
+                    id="hp-message"
+                    name="message"
                     rows="4"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

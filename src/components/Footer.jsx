@@ -157,11 +157,6 @@ export default function Footer({ navigate }) {
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { navigate('security-scanner'); scrollToTop(); }} className="hover:text-[var(--accent-blue)] transition-colors text-[var(--accent-blue)] font-medium cursor-pointer">
-                    Security Scanner Tool
-                  </button>
-                </li>
-                <li>
                   <button onClick={() => { navigate('contact'); scrollToTop(); }} className="hover:text-[var(--accent-blue)] transition-colors cursor-pointer text-slate-400 hover:text-white">
                     Contact Us
                   </button>

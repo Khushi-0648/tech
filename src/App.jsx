@@ -12,7 +12,6 @@ import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import IndustriesPage from './pages/IndustriesPage';
 import SoftwaresPage from './pages/SoftwaresPage';
-import SecurityScannerPage from './pages/SecurityScannerPage';
 import ContactPage from './pages/ContactPage';
 
 // Full Legal Policy Pages
@@ -50,7 +49,7 @@ const legalRoutes = [
 
 const validRoutes = [
   'home', 'about', 'services', 'projects', 
-  'industries', 'softwares', 'security-scanner', 'contact',
+  'industries', 'softwares', 'contact',
   ...legalRoutes,
   ...serviceSlugs,
   ...Object.keys(serviceAliases)
@@ -128,7 +127,6 @@ function AppContent() {
             {currentRoute === 'projects' && <ProjectsPage navigate={navigate} />}
             {currentRoute === 'industries' && <IndustriesPage navigate={navigate} />}
             {currentRoute === 'softwares' && <SoftwaresPage navigate={navigate} />}
-            {currentRoute === 'security-scanner' && <SecurityScannerPage navigate={navigate} />}
             {currentRoute === 'contact' && <ContactPage navigate={navigate} />}
 
             {/* Legal Pages */}

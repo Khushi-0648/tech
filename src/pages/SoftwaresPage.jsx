@@ -331,11 +331,11 @@ export default function SoftwaresPage({ navigate }) {
                     <button
                       onClick={() => {
                         setDownloadModalProduct(null);
-                        navigate('security-scanner');
+                        navigate('contact');
                       }}
                       className="flex-1 py-2.5 rounded-xl bg-[var(--accent-blue)] hover:brightness-110 text-white font-display font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
                     >
-                      Open Live Scanner &rarr;
+                      Request Security SOW &rarr;
                     </button>
                   )}
                 </div>

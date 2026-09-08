@@ -173,12 +173,14 @@ export default function ContactPage({ navigate }) {
                     {/* Name Fields */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-first-name" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           First Name *
                         </label>
                         <div className="relative">
                           <User className="w-4 h-4 text-blue-600 absolute left-3.5 top-3.5" />
                           <input
+                            id="contact-first-name"
+                            name="firstName"
                             type="text"
                             required
                             value={formData.firstName}
@@ -189,10 +191,12 @@ export default function ContactPage({ navigate }) {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-last-name" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           Last Name
                         </label>
                         <input
+                          id="contact-last-name"
+                          name="lastName"
                           type="text"
                           value={formData.lastName}
                           onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
@@ -205,12 +209,14 @@ export default function ContactPage({ navigate }) {
                     {/* Email & Phone */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-email" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           Work Email *
                         </label>
                         <div className="relative">
                           <AtSign className="w-4 h-4 text-blue-600 absolute left-3.5 top-3.5" />
                           <input
+                            id="contact-email"
+                            name="email"
                             type="email"
                             required
                             value={formData.email}
@@ -221,12 +227,14 @@ export default function ContactPage({ navigate }) {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-phone" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           Direct Phone
                         </label>
                         <div className="relative">
                           <Phone className="w-4 h-4 text-blue-600 absolute left-3.5 top-3.5" />
                           <input
+                            id="contact-phone"
+                            name="phone"
                             type="tel"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -240,12 +248,14 @@ export default function ContactPage({ navigate }) {
                     {/* Company & Estimated Scope */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-company" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           Organization / Company
                         </label>
                         <div className="relative">
                           <Building className="w-4 h-4 text-blue-600 absolute left-3.5 top-3.5" />
                           <input
+                            id="contact-company"
+                            name="company"
                             type="text"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -255,10 +265,12 @@ export default function ContactPage({ navigate }) {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                        <label htmlFor="contact-budget" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                           Estimated Budget Tier
                         </label>
                         <select
+                          id="contact-budget"
+                          name="budget"
                           value={formData.budget}
                           onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                           className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 font-sans outline-none cursor-pointer"
@@ -273,10 +285,12 @@ export default function ContactPage({ navigate }) {
 
                     {/* Project Description */}
                     <div>
-                      <label className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                      <label htmlFor="contact-message" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
                         Technical Scope &amp; Problem Statement *
                       </label>
                       <textarea
+                        id="contact-message"
+                        name="message"
                         rows="4"
                         required
                         value={formData.message}
