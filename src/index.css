@@ -1,0 +1,648 @@
+@import "tailwindcss";
+
+@layer base {
+  :root, [data-theme="dark"], .dark {
+    --font-display: 'Space Grotesk', -apple-system, sans-serif;
+    --font-cyber: 'Orbitron', monospace;
+    --font-code: 'JetBrains Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    
+    /* Dark Theme - TechPros Midnight Blue & Electric Cyan */
+    --bg-main: #05081A;         /* Deep obsidian navy for main background */
+    --bg-panel: #0c1330;        /* Deep navy for code block and cards */
+    --bg-panel-subtle: #080d24; /* Slightly darker navy for inset modules */
+
+    /* Typography */
+    --text-primary: #ffffff;    /* Pure white for primary headings */
+    --text-secondary: #94a3b8;  /* Muted silver slate for paragraph text */
+
+    /* Accent Colors */
+    --accent-blue: #00C2FF;     /* TechPros official Electric Cyan Blue */
+    --accent-blue-hover: #38d6ff;
+    --accent-glow: rgba(0, 194, 255, 0.4); /* Cyan glow */
+
+    /* UI Elements & Borders */
+    --border-color: #1a2656;    /* Deep navy structural borders */
+    --btn-bg: #101b44;          /* Dark navy for un-filled buttons or pills */
+    --card-shadow: 0 10px 30px -10px rgba(5, 8, 26, 0.8), 0 4px 12px -2px rgba(0, 194, 255, 0.08);
+    --header-bg: rgba(9, 15, 38, 0.96);
+    --header-scrolled-bg: rgba(7, 12, 32, 0.98);
+    --header-border: #1e2c5e;
+
+    /* Semantic Aliases */
+    --color-bg-primary: #05081A;
+    --color-surface-panel: #0c1330;
+    --color-accent-gold: #00C2FF;
+    --color-highlight-amber: #00C2FF;
+    --color-text-ash: #94a3b8;
+    --color-text-white: #ffffff;
+    --color-border-subtle: #1a2656;
+
+    /* Dual-Contrast Mixed Architecture Tokens */
+    --card-light-bg: #ffffff;
+    --card-light-text-primary: #0A0F2E;
+    --card-light-text-secondary: #475569;
+    --card-light-border: #e2e8f0;
+    --card-light-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 144, 231, 0.08);
+
+    --card-dark-bg: #070e28;
+    --card-dark-text-primary: #ffffff;
+    --card-dark-text-secondary: #94a3b8;
+    --card-dark-border: #1a2a5e;
+    --card-dark-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 194, 255, 0.12);
+
+    --slab-light-bg: linear-gradient(180deg, #f8faff 0%, #edf2f9 100%);
+    --slab-light-text-primary: #0A0F2E;
+    --slab-light-text-secondary: #475569;
+    --slab-light-border: #cbd5e1;
+
+    --slab-dark-bg: linear-gradient(180deg, #05081A 0%, #091133 100%);
+    --slab-dark-text-primary: #ffffff;
+    --slab-dark-text-secondary: #94a3b8;
+    --slab-dark-border: #1a2858;
+  }
+
+  [data-theme="light"], .light {
+    /* Light Theme - Clean Enterprise Slate & Electric Blue */
+    --bg-main: #f8faff;         /* Clean crisp cloud blue/white */
+    --bg-panel: #ffffff;        /* Pure white cards */
+    --bg-panel-subtle: #f0f4fc; /* Inset background */
+
+    /* Typography */
+    --text-primary: #0A0F2E;    /* Deep corporate navy */
+    --text-secondary: #475569;  /* Crisp slate text */
+
+    /* Accent Colors */
+    --accent-blue: #0090e7;     /* High-contrast electric blue */
+    --accent-blue-hover: #0077c2;
+    --accent-glow: rgba(0, 144, 231, 0.25);
+
+    /* UI Elements & Borders */
+    --border-color: #e2e8f0;    /* Crisp light border */
+    --btn-bg: #edf2f9;          /* Light pill button */
+    --card-shadow: 0 10px 30px -10px rgba(10, 15, 46, 0.08), 0 4px 12px -2px rgba(0, 144, 231, 0.06);
+    --header-bg: rgba(255, 255, 255, 0.96);
+    --header-scrolled-bg: rgba(248, 250, 255, 0.98);
+    --header-border: #e2e8f0;
+
+    /* Semantic Aliases */
+    --color-bg-primary: #f8faff;
+    --color-surface-panel: #ffffff;
+    --color-accent-gold: #0090e7;
+    --color-highlight-amber: #0090e7;
+    --color-text-ash: #475569;
+    --color-text-white: #0A0F2E;
+    --color-border-subtle: #e2e8f0;
+
+    /* Dual-Contrast Mixed Architecture Tokens */
+    --card-light-bg: #ffffff;
+    --card-light-text-primary: #0A0F2E;
+    --card-light-text-secondary: #475569;
+    --card-light-border: #e2e8f0;
+    --card-light-shadow: 0 16px 36px -8px rgba(10, 15, 46, 0.08), 0 4px 12px rgba(0, 144, 231, 0.06);
+
+    --card-dark-bg: #070e28;
+    --card-dark-text-primary: #ffffff;
+    --card-dark-text-secondary: #94a3b8;
+    --card-dark-border: #1a2a5e;
+    --card-dark-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 194, 255, 0.15);
+
+    --slab-light-bg: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+    --slab-light-text-primary: #0A0F2E;
+    --slab-light-text-secondary: #475569;
+    --slab-light-border: #e2e8f0;
+
+    --slab-dark-bg: linear-gradient(180deg, #05081A 0%, #091133 100%);
+    --slab-dark-text-primary: #ffffff;
+    --slab-dark-text-secondary: #94a3b8;
+    --slab-dark-border: #1a2858;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+  }
+
+  pre, code, .font-mono {
+    font-family: var(--font-code);
+  }
+}
+
+/* ==========================================================================
+   Whole-Section Contrast Architecture
+   One section is 100% Light Theme, adjacent section is 100% Dark Theme.
+   Header and Footer remain permanently Dark.
+   ========================================================================== */
+
+/* 1. Permanent Dark Header, Footer & Hero Banner Enforcement */
+.header-permanent-dark {
+  background-color: rgba(7, 12, 34, 0.96) !important;
+  border-bottom: 1px solid #1a2656 !important;
+  color: #ffffff !important;
+}
+
+.footer-permanent-dark {
+  background-color: #05081A !important;
+  border-top: 1px solid #1a2656 !important;
+  color: #94a3b8 !important;
+}
+
+.hero-banner-permanent-dark {
+  background-color: #05081A !important;
+  color: #cbd5e1 !important;
+}
+
+.hero-banner-permanent-dark h1,
+.hero-banner-permanent-dark h2,
+.hero-banner-permanent-dark h3 {
+  color: #ffffff !important;
+}
+
+.hero-banner-permanent-dark p {
+  color: #cbd5e1 !important;
+}
+
+/* 2. Full Light Theme Section */
+.section-theme-light {
+  background-color: #f8faff !important;
+  background-image: radial-gradient(circle at 50% 0%, rgba(0, 144, 231, 0.03) 0%, transparent 60%) !important;
+  color: #475569 !important;
+  border-top: 1px solid #e2e8f0 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  position: relative;
+}
+
+.section-theme-light h1,
+.section-theme-light h2,
+.section-theme-light h3,
+.section-theme-light h4,
+.section-theme-light h5,
+.section-theme-light .font-display {
+  color: #0A0F2E !important;
+}
+
+.section-theme-light p,
+.section-theme-light .section-desc {
+  color: #475569 !important;
+}
+
+.section-theme-light label {
+  color: #0A0F2E !important;
+  font-weight: 600 !important;
+}
+
+/* Form Inputs inside Light Section */
+.section-theme-light input,
+.section-theme-light select,
+.section-theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0A0F2E !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.section-theme-light input:focus,
+.section-theme-light select:focus,
+.section-theme-light textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #0090e7 !important;
+  box-shadow: 0 0 0 3px rgba(0, 144, 231, 0.15) !important;
+}
+
+.section-theme-light input::placeholder,
+.section-theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Uniform Light Card */
+.card-light-uniform {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(10, 15, 46, 0.07), 0 4px 12px -2px rgba(0, 144, 231, 0.05) !important;
+  color: #475569 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-light-uniform:hover {
+  transform: translateY(-4px) !important;
+  border-color: #0090e7 !important;
+  box-shadow: 0 20px 35px -8px rgba(0, 144, 231, 0.2) !important;
+}
+
+.card-light-uniform h1,
+.card-light-uniform h2,
+.card-light-uniform h3,
+.card-light-uniform h4,
+.card-light-uniform h5 {
+  color: #0A0F2E !important;
+}
+
+.card-light-uniform p {
+  color: #475569 !important;
+}
+
+/* Badges inside Light Section */
+.badge-light-pill {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+/* Primary CTA inside Light Section */
+.btn-light-primary {
+  background: linear-gradient(135deg, #0090e7 0%, #0077c2 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px -4px rgba(0, 144, 231, 0.4) !important;
+}
+
+.btn-light-primary:hover {
+  background: linear-gradient(135deg, #0080ce 0%, #0068aa 100%) !important;
+  transform: translateY(-1px) !important;
+}
+
+
+/* 3. Full Dark Theme Section */
+.section-theme-dark {
+  background-color: #05081A !important;
+  color: #94a3b8 !important;
+  border-top: 1px solid #141e48 !important;
+  border-bottom: 1px solid #141e48 !important;
+  position: relative;
+}
+
+.section-theme-dark h1,
+.section-theme-dark h2,
+.section-theme-dark h3,
+.section-theme-dark h4,
+.section-theme-dark h5,
+.section-theme-dark .font-display {
+  color: #ffffff !important;
+}
+
+.section-theme-dark p,
+.section-theme-dark .section-desc {
+  color: #94a3b8 !important;
+}
+
+.section-theme-dark label {
+  color: #ffffff !important;
+}
+
+/* Form Inputs inside Dark Section */
+.section-theme-dark input,
+.section-theme-dark select,
+.section-theme-dark textarea {
+  background-color: #080f2c !important;
+  color: #ffffff !important;
+  border: 1px solid #1a2b62 !important;
+}
+
+.section-theme-dark input:focus,
+.section-theme-dark select:focus,
+.section-theme-dark textarea:focus {
+  border-color: #00C2FF !important;
+  box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.2) !important;
+}
+
+.section-theme-dark input::placeholder,
+.section-theme-dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Uniform Dark Card */
+.card-dark-uniform {
+  background-color: #070e28 !important;
+  border: 1px solid #1a2a5e !important;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 194, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-dark-uniform:hover {
+  transform: translateY(-4px) !important;
+  border-color: #00C2FF !important;
+  box-shadow: 0 20px 40px -8px rgba(0, 194, 255, 0.25) !important;
+}
+
+.card-dark-uniform h1,
+.card-dark-uniform h2,
+.card-dark-uniform h3,
+.card-dark-uniform h4,
+.card-dark-uniform h5 {
+  color: #ffffff !important;
+}
+
+.card-dark-uniform p {
+  color: #cbd5e1 !important;
+}
+
+/* Badges inside Dark Section */
+.badge-dark-pill {
+  background-color: rgba(10, 20, 56, 0.75) !important;
+  color: #00C2FF !important;
+  border: 1px solid rgba(0, 194, 255, 0.3) !important;
+}
+
+/* Primary CTA inside Dark Section */
+.btn-dark-primary {
+  background-color: #00C2FF !important;
+  color: #05081A !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.4) !important;
+}
+
+.btn-dark-primary:hover {
+  background-color: #38d6ff !important;
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.6) !important;
+}
+
+/* Backward compatibility aliases */
+.card-contrast-light {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+}
+.card-contrast-light h1, .card-contrast-light h2, .card-contrast-light h3, .card-contrast-light h4, .card-contrast-light h5 {
+  color: #0A0F2E !important;
+}
+.card-contrast-light p {
+  color: #475569 !important;
+}
+
+.card-contrast-dark {
+  background-color: #070e28 !important;
+  border: 1px solid #1a2a5e !important;
+  color: #cbd5e1 !important;
+}
+.card-contrast-dark h1, .card-contrast-dark h2, .card-contrast-dark h3, .card-contrast-dark h4, .card-contrast-dark h5 {
+  color: #ffffff !important;
+}
+.card-contrast-dark p {
+  color: #cbd5e1 !important;
+}
+
+.contrast-slab-light {
+  background-color: #f8faff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.contrast-slab-dark {
+  background-color: #05081A !important;
+  border-top: 1px solid #141e48 !important;
+  border-bottom: 1px solid #141e48 !important;
+}
+.contrast-slab-dark .slab-title {
+  color: var(--slab-dark-text-primary) !important;
+}
+
+/* Electric Blue Mesh & Ambient Radial Glow */
+.enterprise-mesh-bg, .galaxy-mesh-bg {
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(at 15% 15%, var(--accent-glow) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, rgba(26, 38, 86, 0.45) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(12, 19, 48, 0.85) 0px, transparent 65%),
+    radial-gradient(at 15% 85%, var(--accent-glow) 0px, transparent 55%),
+    radial-gradient(at 85% 85%, rgba(16, 27, 68, 0.5) 0px, transparent 50%);
+}
+
+.enterprise-grid, .cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 194, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.enterprise-grid-dense, .cyber-grid-dense {
+  background-image: 
+    linear-gradient(rgba(0, 194, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Adaptive Theme Cards with Deep Navy & Crisp Light Elevation */
+.cosmic-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cosmic-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 20px 40px -12px rgba(0, 194, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Text Gradients - TechPros Electric Cyan to Sky Blue */
+.text-gradient-purple, .text-gradient-neon, .text-gradient-gold, .text-gradient-amber, .text-gradient-cyan, .text-gradient-blue {
+  background: linear-gradient(135deg, var(--text-primary) 0%, #38d6ff 45%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-galaxy {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 60%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Neon Blue Accents */
+.glow-border-gold, .glow-border-cyan, .glow-border-blue, .glow-border-amber, .glow-border-purple {
+  box-shadow: 0 0 20px var(--accent-glow), inset 0 0 15px rgba(0, 194, 255, 0.08);
+}
+
+.cyber-glow-gold, .cyber-glow-cyan, .cyber-glow-purple {
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Custom Scrollbar - Navy & Electric Blue */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+  border: 1px solid var(--bg-panel);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Pulse badge animation */
+@keyframes cyberPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(0, 194, 255, 0);
+  }
+}
+
+.cyber-pulse-green, .cyber-pulse-amber {
+  animation: cyberPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Infinite Horizontal Marquee Ticker */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeScrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScroll 28s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScrollReverse 28s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee.speed-fast,
+.animate-marquee-reverse.speed-fast {
+  animation-duration: 14s !important;
+}
+
+.animate-marquee-slow {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScroll 75s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee-reverse-slow {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScrollReverse 75s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover,
+.animate-marquee-slow:hover,
+.animate-marquee-reverse-slow:hover,
+.ticker-paused {
+  animation-play-state: paused !important;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth Scrolling & Kinetic Floating Physics */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 6s ease-in-out 2.5s infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Modern Bento Grid & Console Architecture Utilities */
+.bento-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 24px 50px -16px rgba(0, 194, 255, 0.22);
+}
+
+.bento-card-hero {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+}
+
+.dot-matrix-bg {
+  background-image: radial-gradient(rgba(0, 194, 255, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.circuit-track {
+  background: linear-gradient(90deg, rgba(26, 38, 86, 0.4) 0%, rgba(0, 194, 255, 0.4) 50%, rgba(26, 38, 86, 0.4) 100%);
+}

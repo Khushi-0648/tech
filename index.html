@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Headers & Hardening -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data: blob:; connect-src 'self' https: wss: data: blob:; object-src 'none'; base-uri 'self';" />
+    
+    <!-- Speculation Rules API for Instant Background Link Prefetching & Prerendering -->
+    <script type="speculationrules">
+    {
+      "prefetch": [
+        {
+          "source": "list",
+          "urls": [
+            "/",
+            "/index.html",
+            "/favicon.svg",
+            "/robots.txt"
+          ],
+          "eagerness": "eager"
+        },
+        {
+          "source": "document",
+          "where": {
+            "and": [
+              { "href_matches": "/*" },
+              { "not": { "href_matches": "*/api/*" } },
+              { "not": { "href_matches": "*/admin/*" } },
+              { "not": { "href_matches": "*/private/*" } },
+              { "not": { "selector_matches": ".no-speculate" } },
+              { "not": { "selector_matches": "[rel~=nofollow]" } }
+            ]
+          },
+          "eagerness": "moderate"
+        }
+      ],
+      "prerender": [
+        {
+          "source": "document",
+          "where": {
+            "and": [
+              { "href_matches": "/*" },
+              { "not": { "href_matches": "*/api/*" } },
+              { "not": { "href_matches": "*/admin/*" } },
+              { "not": { "href_matches": "*/private/*" } },
+              { "not": { "selector_matches": ".no-prerender" } },
+              { "not": { "selector_matches": "[rel~=nofollow]" } }
+            ]
+          },
+          "eagerness": "conservative"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>TechPros Network | Enterprise Web Engineering, AI Automation & IT Services</title>
+    <meta name="title" content="TechPros Network | Enterprise Web Engineering, AI Automation & IT Services" />
+    <meta name="description" content="Headquartered in Sector 62, Noida, UP. We deliver custom full-stack web applications, AI automation, high-availability cloud infrastructure, and bank-grade cybersecurity for global enterprises." />
+    <meta name="keywords" content="Web Development Company Noida, Full Stack Web Development, Custom Software Engineering, AI Automation, Cloud Solutions Noida, Cybersecurity Services India, TechPros Network, Sector 62 Noida" />
+    <meta name="author" content="TechPros Network" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TechPros Network" />
+    <meta property="og:url" content="https://techprosnetwork.com/" />
+    <meta property="og:title" content="TechPros Network | Enterprise Web Development, AI Automation & IT Services Noida" />
+    <meta property="og:description" content="Enterprise web engineering, AI automation, cloud scalability, and cybersecurity engineered for global impact." />
+    <meta property="og:image" content="https://techprosnetwork.com/wp-content/themes/techpros-theme/images/about.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="TechPros Network | Enterprise Web Development, AI & IT Services" />
+    <meta property="twitter:description" content="Custom full-stack web platforms, automated AI workflows, high-availability cloud infrastructure, and bank-grade cybersecurity." />
+    <meta property="twitter:image" content="https://techprosnetwork.com/wp-content/themes/techpros-theme/images/about.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- High-Definition White & Grey Tech Logo Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="font-sans antialiased overflow-x-hidden min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+# ==============================================================================
+# TechPros Network - Hardened Production Robots Security Policy
+# Headquarters: Sector 62, Noida, Uttar Pradesh 201309, India
+# Domain: https://techprosnetwork.com
+# Compliance: OWASP ASVS v4.0.3, ISO 27001, SOC 2 Type II
+# ==============================================================================
+
+User-agent: *
+# Allow legitimate search engines to crawl public marketing & production routes
+Allow: /
+Allow: /index.html
+Allow: /favicon.svg
+Allow: /assets/
+Allow: /images/
+
+# Disallow administrative, telemetry, staging, internal APIs & credential endpoints
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /staging/
+Disallow: /telemetry/
+Disallow: /clusters/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /config/
+Disallow: /server-status
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /temp/
+Disallow: /logs/
+
+# Block aggressive AI scrapers & vulnerability scanners from bulk crawling
+User-agent: GPTBot
+Disallow: /api/
+Disallow: /private/
+Disallow: /telemetry/
+
+User-agent: CCBot
+Disallow: /api/
+Disallow: /private/
+
+User-agent: anthropic-ai
+Disallow: /api/
+Disallow: /private/
+
+User-agent: Claude-Web
+Disallow: /api/
+Disallow: /private/
+
+# Crawl-Delay to prevent server congestion on high-frequency crawlers
+Crawl-delay: 2
+
+# XML Sitemap reference for search index synchronization
+Sitemap: https://techprosnetwork.com/sitemap.xml
