@@ -185,7 +185,7 @@
 .section-theme-light h3,
 .section-theme-light h4,
 .section-theme-light h5,
-.section-theme-light .font-display {
+.section-theme-light .font-display:not(button):not(a) {
   color: #0A0F2E !important;
 }
 
@@ -688,7 +688,19 @@ a[class*="bg-cyan-"],
 button[class*="bg-sky-"],
 a[class*="bg-sky-"],
 button[class*="bg-indigo-"],
-a[class*="bg-indigo-"] {
+a[class*="bg-indigo-"],
+.section-theme-light button[class*="bg-blue-"],
+.section-theme-light a[class*="bg-blue-"],
+.section-theme-light button[class*="bg-[#00C2FF]"],
+.section-theme-light a[class*="bg-[#00C2FF]"],
+.section-theme-light button[class*="bg-[var(--accent-blue)]"],
+.section-theme-light a[class*="bg-[var(--accent-blue)]"],
+.card-light-uniform button[class*="bg-blue-"],
+.card-light-uniform a[class*="bg-blue-"],
+.card-light-uniform button[class*="bg-[#00C2FF]"],
+.card-light-uniform a[class*="bg-[#00C2FF]"],
+.card-light-uniform button[class*="bg-[var(--accent-blue)]"],
+.card-light-uniform a[class*="bg-[var(--accent-blue)]"] {
   color: #ffffff !important;
 }
 
@@ -729,7 +741,19 @@ a[class*="bg-cyan-"] *,
 button[class*="bg-sky-"] *,
 a[class*="bg-sky-"] *,
 button[class*="bg-indigo-"] *,
-a[class*="bg-indigo-"] * {
+a[class*="bg-indigo-"] *,
+.section-theme-light button[class*="bg-blue-"] *,
+.section-theme-light a[class*="bg-blue-"] *,
+.section-theme-light button[class*="bg-[#00C2FF]"] *,
+.section-theme-light a[class*="bg-[#00C2FF]"] *,
+.section-theme-light button[class*="bg-[var(--accent-blue)]"] *,
+.section-theme-light a[class*="bg-[var(--accent-blue)]"] *,
+.card-light-uniform button[class*="bg-blue-"] *,
+.card-light-uniform a[class*="bg-blue-"] *,
+.card-light-uniform button[class*="bg-[#00C2FF]"] *,
+.card-light-uniform a[class*="bg-[#00C2FF]"] *,
+.card-light-uniform button[class*="bg-[var(--accent-blue)]"] *,
+.card-light-uniform a[class*="bg-[var(--accent-blue)]"] * {
   color: #ffffff !important;
 }
 

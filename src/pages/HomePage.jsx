@@ -1715,10 +1715,10 @@ export default function HomePage({ navigate }) {
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider !text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>Send Message</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <span className="!text-white">Send Message</span>
+                    <Send className="w-3.5 h-3.5 !text-white" />
                   </button>
                 </div>
               </form>
