@@ -39,105 +39,115 @@ export default function TermsPage({ navigate }) {
       <section className="section-light py-16 sm:py-24 bg-[#F8FAFC] text-[#0F172A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Executive Summary Card */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
-              <FileCheck className="w-5 h-5 text-sky-600" />
-              <span>Agreement to Terms</span>
-            </h2>
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              TechPros provides business process outsourcing, IT consulting, custom software development, and free developer utilities — including <strong>Warden</strong> (a website security scanner) and <strong>Invio</strong> (invoicing software) — available for download. No payment or credit card is required for these free tools.
-            </p>
-          </div>
-
-          <div className="space-y-10 text-slate-700">
-            {/* Section 1: Account-Free Checkout */}
+          {/* Main Content Card */}
+          <div className="p-6 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-8 text-slate-700 font-sans">
+            
+            {/* Agreement to Terms */}
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                1. Account-Free Software Checkout
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                You do not need to create an account or provide financial credentials to download our software tools. The contact details you provide at checkout (name, business email, and phone number) are used solely to issue your authorized download mirror link and provide essential critical updates.
-              </p>
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Agreement to Terms
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                For detailed insights into how this contact information is processed and retained, please review our comprehensive <button onClick={() => navigate('privacy-policy')} className="text-sky-600 font-semibold hover:underline cursor-pointer">Privacy Policy</button>.
+                By accessing techprosnetwork.com or using our software downloads, you agree to be bound by these Terms of Service. If you do not agree, please do not use the site.
               </p>
             </div>
 
-            {/* Section 2: Acceptable Use Policy */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200 flex items-center justify-between">
-                <span>2. Acceptable Use Policy</span>
-                <ShieldAlert className="w-5 h-5 text-amber-500" />
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                In accessing techprosnetwork.com or deploying our software, you strictly agree NOT to:
+            {/* Our Services */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Our Services
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                TechPros provides business process outsourcing, IT consulting, and related services, along with free software tools &mdash; including Warden (a website security scanner) and Invio (invoicing software) &mdash; available for download after providing your name, email, and phone number at checkout. No payment is required for these downloads.
               </p>
-              <ul className="space-y-3 text-slate-600 text-sm sm:text-base">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                  <span>Use our website, APIs, or software downloads for any unlawful, fraudulent, or malicious purpose.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                  <span>Attempt to gain unauthorized access to our servers, infrastructure, or other client data assets.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                  <span>Reverse engineer, decompile, resell, or commercially redistribute our software binaries outside authorized licensing boundaries.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                  <span><strong>Warden Security Tool Usage:</strong> Use Warden or any associated security audit utility to scan, probe, or test systems you do not own or lack explicit, verifiable authorization to audit.</span>
-                </li>
+            </div>
+
+            {/* Account-Free Checkout */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Account-Free Checkout
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                You do not need to create an account to download our software. The contact details you provide at checkout are used to deliver your download link and, where relevant, follow up about your interest in our services. See our{' '}
+                <button
+                  onClick={() => navigate('privacy-policy')}
+                  className="text-blue-600 hover:underline font-medium cursor-pointer"
+                >
+                  Privacy Policy
+                </button>{' '}
+                for details on how this information is handled.
+              </p>
+            </div>
+
+            {/* Acceptable Use */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Acceptable Use
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-3">
+                You agree not to:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-slate-600 pl-1 text-sm sm:text-base">
+                <li>Use our website or software for any unlawful purpose.</li>
+                <li>Attempt to gain unauthorised access to our systems or another user&rsquo;s data.</li>
+                <li>Reverse engineer, resell, or redistribute our software outside the terms under which it was provided.</li>
+                <li>Use Warden or any of our tools to scan or test systems you do not own or have explicit authorisation to test.</li>
               </ul>
             </div>
 
-            {/* Section 3: Intellectual Property */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                3. Intellectual Property Rights
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                All content published on this website — including code repositories, architectural diagrams, trademarks, branding, user interfaces, and software — remains the exclusive property of TechPros Network or its licensors and is protected by international copyright and intellectual property laws.
-              </p>
+            {/* Intellectual Property */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Intellectual Property
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                Downloading our free software licenses grants you a non-exclusive, revocable, non-transferable license to run the software for its intended business purpose. It does not convey any transfer of underlying source ownership or proprietary IP.
+                All content on this website &mdash; including text, graphics, logos, and software &mdash; is the property of TechPros or its licensors and is protected by applicable intellectual property laws. Downloading our free software does not transfer ownership of that software to you; it grants you a limited licence to use it for its intended purpose.
               </p>
             </div>
 
-            {/* Section 4: No Warranty & Informational Disclaimer */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                4. No Warranty (&ldquo;As-Is&rdquo; Provision)
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                Our public website, documentation, and free software utilities are provided on an &ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE&rdquo; basis without warranties of any kind, whether express, implied, statutory, or otherwise. We do not warrant that tools will be error-free or uninterrupted across every unique operating system environment.
-              </p>
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm">
-                <strong>Important Security Disclaimer:</strong> Telemetry results and vulnerability findings generated by Warden are strictly informational. They must not be treated as a substitute for a comprehensive, manual penetration test and certified code audit conducted by certified cybersecurity specialists.
-              </div>
-            </div>
-
-            {/* Section 5: Limitation of Liability */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                5. Limitation of Liability
-              </h3>
+            {/* No Warranty */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                No Warranty
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                To the fullest extent permitted under governing law, TechPros Network and its officers, directors, employees, and affiliates shall not be liable for any indirect, incidental, consequential, special, or punitive damages (including loss of profits, data corruption, or business interruption) arising from or relating to your use of this website, consulting artifacts, or software downloads.
+                Our website and software tools are provided &ldquo;as is&rdquo; without warranties of any kind, express or implied. We do not guarantee that our software will be error-free, uninterrupted, or fit for every specific purpose. Security-scanning results from Warden are informational and should not be treated as a substitute for a professional security audit.
               </p>
             </div>
 
-            {/* Section 6: Modifications */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                6. Changes to These Terms
-              </h3>
+            {/* Limitation of Liability */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Limitation of Liability
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                We reserve the right to revise or update these Terms of Service at any time. Continued interaction with our website or services subsequent to updated terms being posted establishes formal legal consent.
+                To the fullest extent permitted by law, TechPros is not liable for any indirect, incidental, or consequential damages arising from your use of our website or software.
               </p>
             </div>
+
+            {/* Changes to These Terms */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Changes to These Terms
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                We may update these Terms of Service from time to time. Continued use of the site after changes are posted constitutes acceptance of the revised terms.
+              </p>
+            </div>
+
+            {/* Contact Us */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Contact Us
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Questions about these Terms can be sent to{' '}
+                <a href="mailto:help@techprosnetwork.com" className="text-blue-600 hover:underline font-medium">
+                  help@techprosnetwork.com
+                </a>.
+              </p>
+            </div>
+
           </div>
 
           {/* Quick Legal Switcher Navigation */}

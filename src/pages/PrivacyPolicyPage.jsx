@@ -41,139 +41,134 @@ export default function PrivacyPolicyPage({ navigate }) {
       <section className="section-light py-16 sm:py-24 bg-[#F8FAFC] text-[#0F172A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Executive Summary Card */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-sky-600" />
-              <span>Who We Are &amp; Core Commitment</span>
-            </h2>
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              TechPros operates an engineering headquarters and Network Operations Center (NOC) in Sector 62, Noida, Uttar Pradesh, delivering enterprise full-stack development, cloud infrastructure, AI automation, and cybersecurity services. 
-              <strong> We do not run third-party advertising trackers, and we never sell or rent your personal information to anyone.</strong>
-            </p>
-          </div>
-
-          {/* Section 1: Information We Collect */}
-          <div className="space-y-10 text-slate-700">
+          {/* Main Content Card */}
+          <div className="p-6 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-8 text-slate-700 font-sans">
+            {/* Who We Are */}
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                1. Information We Collect
-              </h3>
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Who We Are
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                This Privacy Policy explains how TechPros (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) collects, uses, and protects information when you visit techprosnetwork.com, contact us, or download one of our free software tools.
+              </p>
+            </div>
+
+            {/* Information We Collect */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-4 font-display">
+                Information We Collect
+              </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs">
-                  <h4 className="font-semibold text-slate-900 text-base mb-2 flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-sky-600" />
-                    <span>Information You Give Us</span>
-                  </h4>
-                  <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                    <li><strong>Contact Form:</strong> First name, last name, email address, company name, service of interest, and project message.</li>
-                    <li><strong>Software Downloads (Warden, Invio):</strong> First name, last name, email address, and phone number collected at checkout before issuing your free download link.</li>
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base">
+                <div>
+                  <h3 className="font-semibold text-slate-900 mb-2">
+                    Information you give us
+                  </h3>
+                  <ul className="list-disc list-inside space-y-1.5 pl-1">
+                    <li>
+                      <strong>Contact form:</strong> first name, last name, email address, company name, service of interest, and your message.
+                    </li>
+                    <li>
+                      <strong>Software downloads (Warden, Invio):</strong> first name, last name, email address, and phone number, collected at checkout before your download link is issued.
+                    </li>
                   </ul>
                 </div>
 
-                <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs">
-                  <h4 className="font-semibold text-slate-900 text-base mb-2 flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-sky-600" />
-                    <span>Information Collected Automatically</span>
-                  </h4>
-                  <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                    <li><strong>Standard Server Logs:</strong> IP address, browser user-agent, pages visited, and timestamps for platform security and denial-of-service prevention.</li>
-                    <li><strong>Essential Cookies:</strong> Strictly necessary session cookies required for software checkout and cart tokens to function properly.</li>
+                <div className="pt-2">
+                  <h3 className="font-semibold text-slate-900 mb-2">
+                    Information collected automatically
+                  </h3>
+                  <ul className="list-disc list-inside space-y-1.5 pl-1">
+                    <li>
+                      Standard server logs (IP address, browser type, pages visited, timestamps) for security and site reliability.
+                    </li>
+                    <li>
+                      Cookies required for the shopping cart and checkout process to function &mdash; see our{' '}
+                      <button
+                        onClick={() => navigate('cookie-policy')}
+                        className="text-blue-600 hover:underline font-medium cursor-pointer"
+                      >
+                        Cookie Policy
+                      </button>{' '}
+                      for details.
+                    </li>
                   </ul>
                 </div>
+
+                <p className="pt-2 text-slate-700 font-medium">
+                  We do not run third-party advertising trackers, and we do not sell or rent your personal information to anyone.
+                </p>
               </div>
             </div>
 
-            {/* Section 2: How We Use Your Information */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                2. How We Use Your Information
-              </h3>
-              <ul className="space-y-3 text-slate-600 text-sm sm:text-base">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Software Delivery:</strong> To deliver the free software download (Invio, Warden) you requested and send automated confirmation and update links.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Inquiry Fulfillment:</strong> To review requirements, schedule discovery calls, and respond directly to project inquiries submitted through our contact forms.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Consultation Follow-Up:</strong> To understand your enterprise IT requirements and follow up regarding potential scoping or engineering engagements.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Infrastructure Security:</strong> To maintain the security, uptime, and defense of our websites, API endpoints, and download mirrors against malicious traffic.</span>
-                </li>
+            {/* How We Use Your Information */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                How We Use Your Information
+              </h2>
+              <ul className="list-disc list-inside space-y-2 text-slate-600 pl-1 text-sm sm:text-base">
+                <li>To deliver the software download you requested and send the associated confirmation email.</li>
+                <li>To respond to enquiries submitted through our contact form.</li>
+                <li>To understand who is interested in our services and follow up about a potential engagement.</li>
+                <li>To maintain the security and proper functioning of our website.</li>
               </ul>
             </div>
 
-            {/* Section 3: Data Storage and Security */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                3. How We Store and Protect Your Data
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                Your information is stored in encrypted databases hosted on dedicated infrastructure we control. We do not transmit or sell user lists to third-party ad networks or data brokers.
-              </p>
+            {/* How We Store and Protect Your Data */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                How We Store and Protect Your Data
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                We implement industry-standard administrative, physical, and technical safeguards (including TLS 1.3 in transit and AES-256 at rest). While no transmission over the internet can be guaranteed 100% impenetrable, we apply bank-grade defense-in-depth principles to ensure the highest integrity of your data.
+                Your information is stored in our website&rsquo;s database, hosted on infrastructure we control, and is not shared with third-party marketing platforms. We use industry-standard security practices to protect it, but no method of transmission or storage is 100% secure.
               </p>
             </div>
 
-            {/* Section 4: Your Rights */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                4. Your Rights &amp; Access Controls
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-                Under applicable data protection regulations (including GDPR, CCPA, and India&rsquo;s Digital Personal Data Protection Act), you hold the right to:
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 mb-4">
-                <li className="p-3 bg-white border border-slate-200 rounded-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Request access to stored records</span>
-                </li>
-                <li className="p-3 bg-white border border-slate-200 rounded-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Request correction of inaccurate data</span>
-                </li>
-                <li className="p-3 bg-white border border-slate-200 rounded-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Request complete data deletion (&ldquo;right to be forgotten&rdquo;)</span>
-                </li>
-                <li className="p-3 bg-white border border-slate-200 rounded-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-600" />
-                  <span>Withdraw consent at any time without penalty</span>
-                </li>
-              </ul>
-              <p className="text-slate-600 text-sm">
-                To exercise any of these rights, contact our Data Privacy Desk at <a href="mailto:help@techprosnetwork.com" className="text-sky-600 font-semibold hover:underline">help@techprosnetwork.com</a>. We respond to all verified requests within standard statutory timelines.
-              </p>
-            </div>
-
-            {/* Section 5: Children's Privacy */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                5. Children&rsquo;s Privacy
-              </h3>
+            {/* Your Rights */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Your Rights
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                Our website, developer utilities, and engineering services are intended strictly for professional and enterprise business use and are not directed at individuals under 16 years of age. We do not knowingly collect personal information from children.
+                You can ask us to access, correct, or delete the personal information we hold about you at any time by emailing{' '}
+                <a href="mailto:help@techprosnetwork.com" className="text-blue-600 hover:underline font-medium">
+                  help@techprosnetwork.com
+                </a>. We will respond within a reasonable timeframe.
               </p>
             </div>
 
-            {/* Section 6: Policy Changes */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
-                6. Changes to This Policy
-              </h3>
+            {/* Children’s Privacy */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Children&rsquo;s Privacy
+              </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                We may periodically update this Privacy Policy to reflect changing regulatory requirements or operational advancements. The &ldquo;Last updated&rdquo; timestamp at the top of this document indicates the most recent revision. Continued use of our site signifies acceptance of any updated terms.
+                Our website and services are intended for business use and are not directed at children under 16. We do not knowingly collect personal information from children.
               </p>
             </div>
 
+            {/* Changes to This Policy */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Changes to This Policy
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                We may update this Privacy Policy from time to time. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision.
+              </p>
+            </div>
+
+            {/* Contact Us */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3 font-display">
+                Contact Us
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Questions about this Privacy Policy can be sent to{' '}
+                <a href="mailto:help@techprosnetwork.com" className="text-blue-600 hover:underline font-medium">
+                  help@techprosnetwork.com
+                </a>.
+              </p>
+            </div>
           </div>
 
           {/* Quick Legal Switcher Navigation */}
