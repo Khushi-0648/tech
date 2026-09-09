@@ -262,8 +262,8 @@ export const portfolioProjects = [
   {
     id: "finscale-global",
     title: "FinScale Global Clearing Engine",
-    domain: "portal.finscalepayments.com",
-    liveUrl: "https://techprosnetwork.com/case-studies/finscale",
+    domain: "techprosnetwork.com",
+    liveUrl: "https://techprosnetwork.com/",
     category: "enterprise",
     categoryName: "FinTech & Banking",
     subtitle: "High-Frequency Multi-Currency Clearing & Settlement Platform",
@@ -292,8 +292,8 @@ export const portfolioProjects = [
   {
     id: "cloudmatrix-noc",
     title: "TechPros Cloud NOC & K8s Mesh",
-    domain: "telemetry.techpros.net",
-    liveUrl: "https://telemetry.techpros.net",
+    domain: "techprosnetwork.com",
+    liveUrl: "https://techprosnetwork.com/",
     category: "enterprise",
     categoryName: "Cloud & DevSecOps",
     subtitle: "Autonomous Kubernetes Cluster Telemetry & Observability Hub",
@@ -536,34 +536,39 @@ export const softwaresData = [
 
 export const timelineMilestones = [
   {
-    year: "2004",
-    title: "Founded in Delhi",
-    desc: "TechPros was established with a team of 12 specialists and a singular mission: delivering high-standard back-office support and web technology to ambitious startups."
-  },
-  {
-    year: "2009",
-    title: "Global Expansion",
-    desc: "Opened our first international delivery center in Singapore, accelerating enterprise IT delivery across Asia-Pacific and North American markets."
-  },
-  {
-    year: "2014",
-    title: "AI Integration & Automation",
-    desc: "Launched our proprietary automation platform, reducing operational processing time by 40% across all client engineering service lines."
-  },
-  {
-    year: "2018",
-    title: "Global Industry Recognition",
-    desc: "Ranked among the top 10 specialized BPO and digital technology providers globally, crossing 200 enterprise clients across 30 countries."
+    year: "2020",
+    title: "Founded in Sector 62, Noida",
+    desc: "TechPros was established with a clear engineering mission: building resilient, high-speed web platforms, enterprise software, and scalable digital architectures."
   },
   {
     year: "2021",
-    title: "Cloud-Native Pivot & Noida NOC",
-    desc: "Established our modern flagship engineering headquarters and 24/7 Network Operations Center (NOC) in Sector 62, Noida, migrating to a 100% cloud-native architecture."
+    title: "Cloud Infrastructure & Full-Stack Expansion",
+    desc: "Expanded specialized full-stack engineering teams across React, Next.js, and Node.js, delivering high-availability cloud deployments on AWS and Azure."
   },
   {
-    year: "2024+",
-    title: "AI-First & Autonomous Era",
-    desc: "Pioneered the TechPros Intelligence Suite, integrating autonomous AI agents, bank-grade zero-trust cybersecurity, and sub-second edge web engineering."
+    year: "2022",
+    title: "DevOps & Microservices Architecture",
+    desc: "Architected automated CI/CD pipelines, containerized microservices, and Kubernetes clustering to achieve 99.99% uptime SLAs for enterprise clients."
+  },
+  {
+    year: "2023",
+    title: "AI Integration & Workflow Automation",
+    desc: "Integrated artificial intelligence and process automation tooling into core solutions, enabling automated business workflows and intelligent data pipelines."
+  },
+  {
+    year: "2024",
+    title: "Zero-Trust Security & 24/7 Monitoring",
+    desc: "Implemented bank-grade zero-trust cybersecurity frameworks, automated vulnerability detection, and established 24/7 Network Operations Center (NOC) oversight."
+  },
+  {
+    year: "2025",
+    title: "Proprietary Software Suite Launch",
+    desc: "Launched proprietary web tools including the Warden domain vulnerability scanner and Invio communications suite, delivering self-service IT utilities."
+  },
+  {
+    year: "2026",
+    title: "Autonomous Systems & Digital Engineering Leadership",
+    desc: "Leading next-generation digital engineering with autonomous AI agent workflows, edge-accelerated platforms, and end-to-end full-lifecycle enterprise solutions."
   }
 ];
 

@@ -415,7 +415,8 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
             {service.capabilities.map((cap, idx) => (
               <div 
                 key={idx}
-                className="group p-7 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-sky-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-left"
+                onClick={() => navigate(cap.link || 'contact')}
+                className="group p-7 rounded-2xl bg-[#F8FAFC] border border-slate-200 hover:border-sky-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-left cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -438,9 +439,9 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-200/60 flex items-center justify-between text-xs font-mono font-bold text-sky-600 group-hover:translate-x-1 transition-transform">
-                  <span>DEPLOYMENT READY</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                <div className="pt-6 mt-6 border-t border-slate-200/60 flex items-center justify-between text-xs font-mono font-bold text-sky-600 group-hover:text-sky-700 group-hover:translate-x-1 transition-all">
+                  <span className="group-hover:underline">DEPLOYMENT READY</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
             ))}

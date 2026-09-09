@@ -9,6 +9,7 @@ import cloudDevopsImg from './mockups/cloud_devops_mesh.jpg';
 import aiAutomationImg from './mockups/ai_automation_network.jpg';
 import cyberSecurityImg from './mockups/cyber_security_soc.jpg';
 import modernWebImg from './mockups/modern_web_engineering.jpg';
+import blueCodingImg from './mockups/blue_coding_workspace.jpg';
 import realNocEngineersImg from './mockups/real_noc_engineers.jpg';
 import realDeveloperWorkspaceImg from './mockups/real_developer_workspace.jpg';
 import realCloudDatacenterImg from './mockups/real_cloud_datacenter.jpg';
@@ -45,6 +46,7 @@ export {
   aiAutomationImg,
   cyberSecurityImg,
   modernWebImg,
+  blueCodingImg,
   realNocEngineersImg,
   realDeveloperWorkspaceImg,
   realCloudDatacenterImg,

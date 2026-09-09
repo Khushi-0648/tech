@@ -6,7 +6,7 @@ import {
   Layers, Play, Check, ShieldAlert, Maximize2, ExternalLink
 } from 'lucide-react';
 import { companyInfo } from '../data/siteData';
-import { dashboardImg } from '../assets/images';
+import { blueCodingImg, modernWebImg, dashboardImg } from '../assets/images';
 
 export default function HeroEditorialStagger({ navigate }) {
 
@@ -188,52 +188,59 @@ export default function HeroEditorialStagger({ navigate }) {
                     <span className="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-xs" />
                     <span className="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-xs" />
                   </div>
-                  {/* URL Bar */}
-                  <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 ml-2 rounded-md bg-[#0c1330] border border-[#1a2656] text-[11px] font-mono text-slate-400 shadow-xs">
-                    <Lock className="w-3 h-3 text-[#00C2FF]" />
-                    <span>telemetry.techpros.net/clusters/noida-dc-01</span>
-                  </div>
+                  {/* Working Website URL Bar */}
+                  <a 
+                    href="https://techprosnetwork.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hidden sm:flex items-center gap-1.5 px-3 py-1 ml-2 rounded-md bg-[#0c1330] hover:bg-[#101b44] border border-[#1a2656] hover:border-[#00C2FF]/50 text-[11px] font-mono text-slate-300 hover:text-[#00C2FF] transition-all shadow-xs cursor-pointer group"
+                    title="Open techprosnetwork.com in new tab"
+                  >
+                    <Lock className="w-2.5 h-2.5 text-emerald-400" />
+                    <span>techprosnetwork.com</span>
+                    <ExternalLink className="w-2.5 h-2.5 text-slate-500 group-hover:text-[#00C2FF] transition-colors" />
+                  </a>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-[11px] font-mono font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-ping" />
-                    Live NOC Feed
+                    Live
                   </span>
                 </div>
               </div>
 
-              {/* Direct Telemetry Data Showcase */}
+              {/* Direct Telemetry & Code Showcase */}
               <div className="p-4 space-y-3 bg-[#070e28]">
-                {/* Dashboard Mockup Image with HUD Overlays */}
+                {/* Electric Blue Modern Coding Workspace Image */}
                 <div className="relative rounded-xl overflow-hidden border border-[#1a2656] group">
                   <img 
-                    src={dashboardImg} 
-                    alt="TechPros Cloud NOC Telemetry & Kubernetes Management Dashboard" 
+                    src={blueCodingImg} 
+                    alt="TechPros Electric Blue Enterprise Coding & Developer Workspace" 
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
-                    className="w-full h-[220px] sm:h-[240px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="w-full h-[220px] sm:h-[245px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05081A]/95 via-transparent to-black/40 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05081A]/95 via-transparent to-black/30 pointer-events-none" />
 
-                  {/* Floating HUD Badges on Top of Realistic Dashboard */}
+                  {/* Floating HUD Badges on Top of Coding Picture */}
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-[#05081A]/95 backdrop-blur-md px-2.5 py-1 rounded-md border border-[#00C2FF]/30 text-[10px] font-mono text-[#00C2FF] font-semibold shadow-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Cluster ap-south-1a: 100% HEALTHY</span>
+                    <Code2 className="w-3 h-3 text-[#00C2FF]" />
+                    <span>TypeScript 5.6 • React 19 SSR</span>
                   </div>
 
                   <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 bg-[#05081A]/95 backdrop-blur-md px-2.5 py-1 rounded-md border border-[#00C2FF]/30 text-[10px] font-mono text-[#00C2FF] font-semibold shadow-md">
-                    <ShieldCheck className="w-3 h-3 text-[#00C2FF]" />
-                    <span>SOC 2 Type II</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>0 Errors • OWASP A+</span>
                   </div>
 
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between bg-[#05081A]/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#1a2656] text-[11px] font-mono shadow-md">
-                    <div className="flex items-center gap-3">
-                      <span className="text-slate-300 font-medium">1,420 Active Pods</span>
-                      <span className="text-slate-500">•</span>
-                      <span className="text-emerald-400 font-semibold">0 Failed Nodes</span>
+                    <div className="flex items-center gap-2">
+                      <Terminal className="w-3.5 h-3.5 text-[#00C2FF]" />
+                      <span className="text-slate-200 font-medium">npm run build:prod</span>
+                      <span className="text-emerald-400 font-semibold">• compiled (0.8s)</span>
                     </div>
                     <span className="text-[#00C2FF] font-semibold">P99: 8.4ms</span>
                   </div>

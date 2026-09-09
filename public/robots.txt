@@ -9,7 +9,9 @@ User-agent: *
 # Allow legitimate search engines to crawl public marketing & production routes
 Allow: /
 Allow: /index.html
-Allow: /favicon.svg
+Allow: /favicon*
+Allow: /techpros-logo-1.png
+Allow: /apple-touch-icon.png
 Allow: /assets/
 Allow: /images/
 

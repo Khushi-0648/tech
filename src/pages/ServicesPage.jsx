@@ -252,9 +252,9 @@ export default function ServicesPage({ navigate }) {
                   <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                     <button
                       onClick={() => navigate(service.slug || service.id)}
-                      className="text-xs font-mono flex items-center gap-1 cursor-pointer font-bold text-blue-600"
+                      className="text-xs font-mono flex items-center gap-1 cursor-pointer font-bold text-blue-600 hover:text-blue-800 transition-colors"
                     >
-                      <span>Explore Dedicated Page</span>
+                      <span>Explore</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
 

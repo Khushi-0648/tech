@@ -332,10 +332,10 @@ export default function AboutPage({ navigate }) {
               Our Journey
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#0A0F2E] tracking-tight mt-1">
-              Two Decades of Engineering Growth
+              Our Journey of Engineering Growth
             </h2>
             <p className="mt-3 text-sm text-slate-600">
-              From a small team with a big idea, to a global powerhouse serving 500+ enterprise clients across 30+ countries.
+              Founded in 2020 in Sector 62, Noida, TechPros has grown into a premier digital engineering partner delivering mission-critical web platforms, cloud architecture, and AI automation.
             </p>
           </div>
 

@@ -219,13 +219,10 @@ export default function Navbar({ currentRoute, navigate }) {
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           boxShadow: scrolled || servicesDropdownOpen
-            ? '0 16px 40px rgba(0,0,0,0.75), 0 1px 0 rgba(0,194,255,0.25)' 
-            : '0 6px 28px rgba(0,0,0,0.5), 0 1px 0 rgba(0,194,255,0.15)'
+            ? '0 16px 40px rgba(0,0,0,0.7)' 
+            : '0 4px 20px rgba(0,0,0,0.4)'
         }}
       >
-        {/* Luminous Top Cyber Accent Hairline */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--accent-blue)] to-transparent opacity-85 pointer-events-none" />
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 sm:gap-6">
 
           {/* 1. Left: LARGE Official TechPros Logo Standalone (Dark Mode Shield) */}

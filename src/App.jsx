@@ -41,7 +41,8 @@ const serviceSlugs = [
 const serviceAliases = {
   'ai-automation': 'artificial-intelligence-and-automation',
   'industrial-autonomy': 'industrial-autonomy-and-engineering',
-  'network-solutions': 'network-solutions-and-services'
+  'network-solutions': 'network-solutions-and-services',
+  'cybersecurity-and-network-operations': 'cybersecurity'
 };
 
 const legalRoutes = [

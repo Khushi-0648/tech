@@ -31,8 +31,8 @@ export default function TechProsLogo({
           alt="TechPros Global IT & BPM Solutions" 
           className={`${className} object-contain transition-all duration-300 ${
             activeTheme === 'dark' 
-              ? 'filter drop-shadow-[0_0_16px_rgba(0,194,255,0.35)]' 
-              : 'filter drop-shadow-[0_2px_10px_rgba(10,15,46,0.12)]'
+              ? 'filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]' 
+              : 'filter drop-shadow-[0_2px_8px_rgba(10,15,46,0.12)]'
           }`}
         />
       </div>
@@ -47,8 +47,8 @@ export default function TechProsLogo({
         alt="TechPros" 
         className={`${className} object-contain transition-all duration-300 ${
           activeTheme === 'dark' 
-            ? 'filter drop-shadow-[0_0_16px_rgba(0,194,255,0.45)]' 
-            : 'filter drop-shadow-[0_2px_10px_rgba(10,15,46,0.18)]'
+            ? 'filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]' 
+            : 'filter drop-shadow-[0_2px_8px_rgba(10,15,46,0.15)]'
         }`}
       />
     </div>
