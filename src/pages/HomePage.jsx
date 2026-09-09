@@ -15,6 +15,13 @@ import {
   faqList, companyInfo, enterprisePartners, certificationsList 
 } from '../data/siteData';
 import { campusImg, fintechImg, healthtechImg, dashboardImg } from '../assets/images';
+import { 
+  sanitizeInput, 
+  validateEmail, 
+  checkRateLimit, 
+  verifyHoneypot, 
+  logSecurityEvent 
+} from '../utils/security';
 
 const iconMap = {
   Code2,
@@ -32,6 +39,8 @@ const iconMap = {
 export default function HomePage({ navigate }) {
   const [openFaq, setOpenFaq] = useState(0);
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [homeFormError, setHomeFormError] = useState('');
+  const [homeHoneypot, setHomeHoneypot] = useState('');
   const [selectedCaseStudyId, setSelectedCaseStudyId] = useState(portfolioProjects[0].id);
 
   const [formData, setFormData] = useState({
@@ -295,10 +304,54 @@ export default function HomePage({ navigate }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email) return;
+    setHomeFormError('');
+
+    // 1. Anti-Bot Honeypot Defense
+    if (!verifyHoneypot(homeHoneypot)) {
+      logSecurityEvent('BOT_HONEYPOT_TRIGGERED', { form: 'homepage' });
+      setContactSubmitted(true);
+      return;
+    }
+
+    // 2. Rate Limiting Check
+    const rateLimit = checkRateLimit('homepage_form', 3, 60);
+    if (!rateLimit.allowed) {
+      logSecurityEvent('RATE_LIMIT_EXCEEDED', { form: 'homepage' });
+      setHomeFormError(`Submission rate limit reached. Please wait ${rateLimit.remainingSeconds}s.`);
+      return;
+    }
+
+    // 3. Email Validation
+    if (!validateEmail(formData.email)) {
+      logSecurityEvent('INVALID_EMAIL_REJECTED', { form: 'homepage' });
+      setHomeFormError('Please provide a valid corporate email address.');
+      return;
+    }
+
+    // 4. Input Sanitization
+    const cleanFirstName = sanitizeInput(formData.firstName, 50);
+    const cleanLastName = sanitizeInput(formData.lastName, 50);
+    const cleanCompany = sanitizeInput(formData.company, 80);
+    const cleanMessage = sanitizeInput(formData.message, 2000);
+
+    if (!cleanFirstName) {
+      setHomeFormError('First name is required.');
+      return;
+    }
+
+    setFormData(prev => ({
+      ...prev,
+      firstName: cleanFirstName,
+      lastName: cleanLastName,
+      company: cleanCompany,
+      message: cleanMessage
+    }));
+
     setContactSubmitted(true);
     setTimeout(() => {
       setContactSubmitted(false);
+      setHomeFormError('');
+      setHomeHoneypot('');
       setFormData({
         firstName: '',
         lastName: '',
@@ -1629,6 +1682,29 @@ export default function HomePage({ navigate }) {
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-6">
+                
+                {/* Security Validation Error Banner */}
+                {homeFormError && (
+                  <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs font-mono flex items-center gap-2.5 animate-in fade-in">
+                    <ShieldCheck className="w-4 h-4 text-rose-600 shrink-0" />
+                    <span>{homeFormError}</span>
+                  </div>
+                )}
+
+                {/* Anti-Bot Security Honeypot (OWASP A04) */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }} aria-hidden="true">
+                  <label htmlFor="hp-website-trap">Leave this field blank</label>
+                  <input
+                    id="hp-website-trap"
+                    type="text"
+                    name="website_trap"
+                    value={homeHoneypot}
+                    onChange={(e) => setHomeHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="hp-first-name" className="block text-xs font-mono text-slate-700 mb-2 uppercase font-bold">First Name *</label>
@@ -1637,6 +1713,7 @@ export default function HomePage({ navigate }) {
                       name="firstName"
                       type="text"
                       required
+                      maxLength={50}
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       placeholder="e.g. Rahul"
@@ -1650,6 +1727,7 @@ export default function HomePage({ navigate }) {
                       name="lastName"
                       type="text"
                       required
+                      maxLength={50}
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       placeholder="e.g. Sharma"
@@ -1666,6 +1744,7 @@ export default function HomePage({ navigate }) {
                       name="email"
                       type="email"
                       required
+                      maxLength={100}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="you@company.com"
@@ -1678,6 +1757,7 @@ export default function HomePage({ navigate }) {
                       id="hp-company"
                       name="company"
                       type="text"
+                      maxLength={80}
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="e.g. Acme Global"
@@ -1712,6 +1792,7 @@ export default function HomePage({ navigate }) {
                     id="hp-message"
                     name="message"
                     rows="4"
+                    maxLength={2000}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your technical stack, timeline, or current bottlenecks..."

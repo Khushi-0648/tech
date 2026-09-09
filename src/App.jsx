@@ -22,6 +22,9 @@ import CookiePolicyPage from './pages/CookiePolicyPage';
 // 10 Dedicated Service Detail Pages
 import ServiceDetailPage from './pages/ServiceDetailPage';
 
+// 404 Telemetry Fallback Page
+import NotFoundPage from './pages/NotFoundPage';
+
 const serviceSlugs = [
   'web-development',
   'artificial-intelligence-and-automation',
@@ -50,6 +53,7 @@ const legalRoutes = [
 const validRoutes = [
   'home', 'about', 'services', 'projects', 
   'industries', 'softwares', 'contact',
+  '404', 'not-found',
   ...legalRoutes,
   ...serviceSlugs,
   ...Object.keys(serviceAliases)
@@ -58,7 +62,11 @@ const validRoutes = [
 function AppContent() {
   // Sync route with URL hash for browser history & static link support
   const resolveRoute = (rawHash) => {
-    const clean = rawHash.replace('#/', '').replace('#', '');
+    if (!rawHash) return 'home';
+    const clean = rawHash.replace('#/', '').replace('#', '').trim();
+    if (!clean || clean === 'home') {
+      return 'home';
+    }
     const mapped = serviceAliases[clean] || clean;
     if (validRoutes.includes(mapped) || serviceSlugs.includes(mapped)) {
       return mapped;
@@ -66,7 +74,7 @@ function AppContent() {
     if (validRoutes.includes(clean)) {
       return clean;
     }
-    return 'home';
+    return '404';
   };
 
   const getInitialRoute = () => {
@@ -74,6 +82,7 @@ function AppContent() {
   };
 
   const [currentRoute, setCurrentRoute] = useState(getInitialRoute);
+  const [requestedPath, setRequestedPath] = useState(() => window.location.hash || '');
 
   // Guarantee viewport always starts at top banner on initial load & reloads
   useEffect(() => {
@@ -85,6 +94,7 @@ function AppContent() {
 
   useEffect(() => {
     const handleHashChange = () => {
+      setRequestedPath(window.location.hash);
       const target = resolveRoute(window.location.hash);
       setCurrentRoute(target);
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -95,6 +105,7 @@ function AppContent() {
   }, []);
 
   const navigate = (route) => {
+    setRequestedPath(route.startsWith('#') ? route : `#/${route}`);
     const target = resolveRoute(route);
     setCurrentRoute(target);
     window.location.hash = `#/${target}`;
@@ -143,6 +154,15 @@ function AppContent() {
             {/* 10 Individual Service Pages */}
             {serviceSlugs.includes(currentRoute) && (
               <ServiceDetailPage serviceId={currentRoute} navigate={navigate} />
+            )}
+
+            {/* 404 Telemetry Fallback Page */}
+            {(currentRoute === '404' || currentRoute === 'not-found' || ![
+              'home', 'about', 'services', 'projects', 'industries', 'softwares', 'contact',
+              'privacy-policy', 'privacy', 'terms-of-service', 'terms', 'cookie-policy', 'cookies',
+              ...serviceSlugs
+            ].includes(currentRoute)) && (
+              <NotFoundPage navigate={navigate} requestedPath={requestedPath} />
             )}
           </motion.div>
         </AnimatePresence>

@@ -11,20 +11,42 @@ import {
   careerOpenings 
 } from '../data/siteData';
 import { realNocEngineersImg } from '../assets/images';
+import { sanitizeInput, validateEmail, logSecurityEvent } from '../utils/security';
 
 export default function AboutPage({ navigate }) {
   const [selectedJob, setSelectedJob] = useState(null);
   const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+  const [applicantName, setApplicantName] = useState('');
   const [applicantEmail, setApplicantEmail] = useState('');
+  const [applicantUrl, setApplicantUrl] = useState('');
+  const [applyError, setApplyError] = useState('');
 
   const handleApply = (e) => {
     e.preventDefault();
-    if (!applicantEmail) return;
+    setApplyError('');
+
+    if (!validateEmail(applicantEmail)) {
+      logSecurityEvent('INVALID_CAREER_EMAIL', { job: selectedJob?.title });
+      setApplyError('Please enter a valid email address.');
+      return;
+    }
+
+    const cleanName = sanitizeInput(applicantName, 60);
+    const cleanUrl = sanitizeInput(applicantUrl, 200);
+
+    if (!cleanName) {
+      setApplyError('Please enter your full name.');
+      return;
+    }
+
     setApplicationSubmitted(true);
     setTimeout(() => {
       setApplicationSubmitted(false);
       setSelectedJob(null);
+      setApplicantName('');
       setApplicantEmail('');
+      setApplicantUrl('');
+      setApplyError('');
     }, 4000);
   };
 
@@ -464,11 +486,20 @@ export default function AboutPage({ navigate }) {
                   </button>
                 </div>
 
+                {applyError && (
+                  <div className="p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">
+                    {applyError}
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-xs font-mono text-[var(--accent-blue)] mb-1">Your Full Name *</label>
                   <input
                     type="text"
                     required
+                    maxLength={60}
+                    value={applicantName}
+                    onChange={(e) => setApplicantName(e.target.value)}
                     placeholder="e.g. Aryan Verma"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-[var(--bg-panel-subtle)] border border-[var(--accent-blue)]/30 text-white font-mono text-xs focus:border-[var(--accent-blue)] focus:ring-2 focus:ring-[var(--accent-blue)]/20 outline-none placeholder:text-slate-500"
                   />
@@ -479,6 +510,7 @@ export default function AboutPage({ navigate }) {
                   <input
                     type="email"
                     required
+                    maxLength={100}
                     value={applicantEmail}
                     onChange={(e) => setApplicantEmail(e.target.value)}
                     placeholder="aryan@gmail.com"
@@ -490,6 +522,9 @@ export default function AboutPage({ navigate }) {
                   <label className="block text-xs font-mono text-[var(--accent-blue)] mb-1">LinkedIn / GitHub Profile URL</label>
                   <input
                     type="url"
+                    maxLength={200}
+                    value={applicantUrl}
+                    onChange={(e) => setApplicantUrl(e.target.value)}
                     placeholder="https://github.com/username"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-[var(--bg-panel-subtle)] border border-[var(--accent-blue)]/30 text-white font-mono text-xs focus:border-[var(--accent-blue)] focus:ring-2 focus:ring-[var(--accent-blue)]/20 outline-none placeholder:text-slate-500"
                   />
