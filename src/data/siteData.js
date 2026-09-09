@@ -50,7 +50,7 @@ export const certificationsList = [
 export const companyInfo = {
   name: "TechPros Network",
   tagline: "Enterprise Web Engineering & IT for Global Scale",
-  headquarters: "Logix Cyber Park, Tower B, Sector 62, Noida, Uttar Pradesh 201309, India",
+  headquarters: "Sector 62, Noida, Uttar Pradesh 201309, India",
   phone: "+91 88514 22486",
   email: "help@techprosnetwork.com",
   established: 2004,

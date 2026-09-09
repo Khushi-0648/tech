@@ -1401,7 +1401,7 @@ export default function HomePage({ navigate }) {
                     <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-bold text-[#0A0F2E] text-sm">
-                        Logix Cyber Park, Tower B, Sector 62, Noida, UP 201309
+                        Sector 62, Noida, UP 201309
                       </div>
                       <div className="text-slate-600 text-[11px] mt-0.5">
                         Direct fiber interconnects to AWS Mumbai (ap-south-1) &bull; 24/7 Security Operations

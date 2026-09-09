@@ -758,18 +758,28 @@ a[class*="bg-indigo-"]:not([class*="bg-white"]):not([class*="bg-white/"]) *,
 }
 
 /* Universal White Button Pure Blue Text Guarantee */
-button[class*="bg-white"],
-a[class*="bg-white"],
-button[class*="bg-white/"],
-a[class*="bg-white/"] {
+button[class*="bg-white"]:not(.related-service-tab),
+a[class*="bg-white"]:not(.related-service-tab),
+button[class*="bg-white/"]:not(.related-service-tab),
+a[class*="bg-white/"]:not(.related-service-tab) {
   color: #1d4ed8 !important;
 }
 
-button[class*="bg-white"] *,
-a[class*="bg-white"] *,
-button[class*="bg-white/"] *,
-a[class*="bg-white/"] * {
+button[class*="bg-white"]:not(.related-service-tab) *,
+a[class*="bg-white"]:not(.related-service-tab) *,
+button[class*="bg-white/"]:not(.related-service-tab) *,
+a[class*="bg-white/"]:not(.related-service-tab) * {
   color: #1d4ed8 !important;
+}
+
+/* Explicit pure white text guarantee for Related Engineering Services tabs */
+.related-service-tab,
+.related-service-tab *,
+.related-service-tab h4,
+.related-service-tab p,
+.related-service-tab span,
+.related-service-tab svg {
+  color: #ffffff !important;
 }
 
 /* Mobile Touch Targets & iOS Safari Viewport Enhancements */

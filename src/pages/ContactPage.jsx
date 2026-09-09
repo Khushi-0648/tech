@@ -522,7 +522,7 @@ export default function ContactPage({ navigate }) {
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
                     <div className="text-sm font-display font-bold text-white flex items-center gap-1.5 mb-1">
                       <Building2 className="w-4 h-4 text-[#00C2FF]" />
-                      <span>Logix Cyber Park &bull; Tower B</span>
+                      <span>Sector 62 &bull; Noida</span>
                     </div>
                     <div className="text-xs text-slate-200 font-sans leading-relaxed">
                       180+ Full-Time Systems Architects &bull; ISO 27001 Certified Global Delivery Pods

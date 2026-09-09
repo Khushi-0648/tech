@@ -797,10 +797,10 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
               </div>
               <button
                 onClick={() => navigate('services')}
-                className="hidden sm:flex items-center gap-1.5 text-xs font-mono text-[var(--accent-blue)] hover:underline cursor-pointer"
+                className="hidden sm:flex items-center gap-1.5 text-xs font-mono text-white hover:underline cursor-pointer"
               >
                 <span>View All 10 Domains</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </button>
             </div>
 
@@ -816,7 +816,7 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
                   <button
                     key={relIdx}
                     onClick={() => navigate(rel.slug)}
-                    className="group rounded-2xl border border-white/10 bg-white/5 hover:border-[var(--accent-blue)] hover:bg-white/10 transition-all text-left cursor-pointer overflow-hidden flex flex-col justify-between"
+                    className="related-service-tab group rounded-2xl border border-white/10 bg-[#070e28] hover:border-[var(--accent-blue)] hover:bg-[#0c1438] transition-all text-left cursor-pointer overflow-hidden flex flex-col justify-between !text-white"
                   >
                     {/* Related Domain Image Header */}
                     <div className="relative h-28 w-full overflow-hidden bg-slate-900 border-b border-white/10">
@@ -827,30 +827,25 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
                         
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#070D28] via-[#070D28]/50 to-transparent" />
-                      <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md border border-white/15 text-[#00C2FF] font-mono text-[9px] font-bold">
+                      <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md border border-white/15 !text-white font-mono text-[9px] font-bold">
                         EXPLORE
                       </div>
                       <div className="absolute bottom-2 left-3">
-                        <RelIcon className="w-4 h-4 text-[var(--accent-blue)]" />
+                        <RelIcon className="w-4 h-4 !text-white" />
                       </div>
                     </div>
 
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between mb-1.5">
-                          <h4 className="text-sm font-bold text-white group-hover:text-[var(--accent-blue)] transition-colors line-clamp-1">
+                          <h4 className="text-sm font-bold !text-white transition-colors line-clamp-1">
                             {rel.heroTitle}
                           </h4>
-                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0 ml-2" />
+                          <ArrowRight className="w-4 h-4 !text-white group-hover:translate-x-1 transition-all shrink-0 ml-2" />
                         </div>
-                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                        <p className="text-xs !text-white line-clamp-2 leading-relaxed">
                           {rel.heroDesc}
                         </p>
-                      </div>
-
-                      <div className="pt-3 mt-3 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-slate-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                        <span>NOIDA NOC ACTIVE</span>
                       </div>
                     </div>
                   </button>

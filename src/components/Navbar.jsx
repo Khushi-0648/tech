@@ -585,7 +585,7 @@ export default function Navbar({ currentRoute, navigate }) {
                         24/7 Global IT Support & Architecture
                       </h4>
                       <p className="text-[11px] text-[var(--text-secondary)] mt-1 leading-relaxed">
-                        Logix Cyber Park, Tower B. Senior system engineers standby for zero-downtime deployment.
+                        Sector 62, Noida. Senior system engineers standby for zero-downtime deployment.
                       </p>
 
                       {/* SLA metrics strip */}
