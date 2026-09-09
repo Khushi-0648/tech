@@ -658,7 +658,7 @@ export default function ServiceDetailPage({ serviceId, navigate }) {
                           <a 
                             href={proj.link} 
                             target="_blank" 
-                            rel="noreferrer" 
+                            rel="noopener noreferrer" 
                             className="text-xs font-mono font-bold text-sky-600 hover:underline flex items-center gap-1.5"
                           >
                             <span>Visit Live Project</span>

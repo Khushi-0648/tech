@@ -3,15 +3,26 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, Send, CheckCircle2, ShieldCheck, 
   Terminal, Sparkles, Clock, Globe, MessageSquare, Building, 
-  User, AtSign, Briefcase, HelpCircle, ArrowRight, Building2
+  User, AtSign, Briefcase, HelpCircle, ArrowRight, Building2,
+  AlertTriangle
 } from 'lucide-react';
 import { companyInfo, faqList } from '../data/siteData';
 import { campusImg } from '../assets/images';
+import { 
+  sanitizeInput, 
+  validateEmail, 
+  validatePhone, 
+  checkRateLimit, 
+  verifyHoneypot, 
+  logSecurityEvent 
+} from '../utils/security';
 
 export default function ContactPage({ navigate }) {
   const [inquiryType, setInquiryType] = useState('Web Engineering');
   const [submitted, setSubmitted] = useState(false);
   const [ticketId, setTicketId] = useState('');
+  const [formError, setFormError] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -34,15 +45,66 @@ export default function ContactPage({ navigate }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email || !formData.message) return;
+    setFormError('');
 
+    // 1. Anti-Bot Honeypot Defense (OWASP A04: Insecure Design)
+    if (!verifyHoneypot(honeypot)) {
+      logSecurityEvent('BOT_HONEYPOT_TRIGGERED', { form: 'contact' });
+      setSubmitted(true);
+      setTicketId('TPN-' + Math.floor(10000 + Math.random() * 90000));
+      return;
+    }
+
+    // 2. Client-Side Rate Limiting (OWASP A04: Denial of Service / Flooding)
+    const rateLimit = checkRateLimit('contact_form', 3, 60);
+    if (!rateLimit.allowed) {
+      logSecurityEvent('RATE_LIMIT_EXCEEDED', { form: 'contact' });
+      setFormError(`Transmission rate limit exceeded. Please wait ${rateLimit.remainingSeconds}s before sending another scope.`);
+      return;
+    }
+
+    // 3. Email Format & Anti-CRLF Injection Check (OWASP A03: Injection)
+    if (!validateEmail(formData.email)) {
+      logSecurityEvent('INVALID_EMAIL_REJECTED', { form: 'contact' });
+      setFormError('Please enter a valid enterprise business email address (e.g. name@company.com).');
+      return;
+    }
+
+    // 4. Phone Format Check
+    if (formData.phone && !validatePhone(formData.phone)) {
+      logSecurityEvent('INVALID_PHONE_REJECTED', { form: 'contact' });
+      setFormError('Please enter a valid international or standard phone number.');
+      return;
+    }
+
+    // 5. Input Sanitization & Boundary Caps (OWASP A03: XSS & HTML Injection)
+    const cleanFirstName = sanitizeInput(formData.firstName, 50);
+    const cleanLastName = sanitizeInput(formData.lastName, 50);
+    const cleanCompany = sanitizeInput(formData.company, 80);
+    const cleanMessage = sanitizeInput(formData.message, 2000);
+
+    if (!cleanFirstName || !cleanMessage) {
+      setFormError('First name and technical scope problem statement are required.');
+      return;
+    }
+
+    // Generate authenticated dispatch ticket
     const generatedTicket = 'TPN-' + Math.floor(10000 + Math.random() * 90000);
     setTicketId(generatedTicket);
+    setFormData(prev => ({
+      ...prev,
+      firstName: cleanFirstName,
+      lastName: cleanLastName,
+      company: cleanCompany,
+      message: cleanMessage
+    }));
     setSubmitted(true);
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setFormError('');
+    setHoneypot('');
     setFormData({
       firstName: '',
       lastName: '',
@@ -147,6 +209,28 @@ export default function ContactPage({ navigate }) {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     
+                    {/* Security Validation Error Banner */}
+                    {formError && (
+                      <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs font-mono flex items-center gap-2.5 animate-in fade-in">
+                        <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
+                        <span>{formError}</span>
+                      </div>
+                    )}
+
+                    {/* Anti-Bot Security Honeypot (OWASP A04) - Hidden from humans, traps automated bots */}
+                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }} aria-hidden="true">
+                      <label htmlFor="contact-website-trap">Leave this security field empty</label>
+                      <input
+                        id="contact-website-trap"
+                        type="text"
+                        name="website_trap"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
                     {/* Inquiry Type Chips */}
                     <div>
                       <label className="block text-xs font-mono text-slate-700 uppercase tracking-wider mb-2 font-bold">
@@ -183,6 +267,7 @@ export default function ContactPage({ navigate }) {
                             name="firstName"
                             type="text"
                             required
+                            maxLength={50}
                             value={formData.firstName}
                             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                             placeholder="Satya"
@@ -198,6 +283,7 @@ export default function ContactPage({ navigate }) {
                           id="contact-last-name"
                           name="lastName"
                           type="text"
+                          maxLength={50}
                           value={formData.lastName}
                           onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                           placeholder="Singh"
@@ -219,6 +305,7 @@ export default function ContactPage({ navigate }) {
                             name="email"
                             type="email"
                             required
+                            maxLength={100}
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="satya@enterprise.com"
@@ -236,6 +323,7 @@ export default function ContactPage({ navigate }) {
                             id="contact-phone"
                             name="phone"
                             type="tel"
+                            maxLength={25}
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             placeholder="+91 ..."
@@ -257,6 +345,7 @@ export default function ContactPage({ navigate }) {
                             id="contact-company"
                             name="company"
                             type="text"
+                            maxLength={80}
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             placeholder="Global Corp Inc"
@@ -293,6 +382,7 @@ export default function ContactPage({ navigate }) {
                         name="message"
                         rows="4"
                         required
+                        maxLength={2000}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Detail your architectural requirements, performance targets, current tech stack, or desired deployment timeline..."
