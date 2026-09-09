@@ -166,7 +166,7 @@ export default function ContactPage({ navigate }) {
                 
                 <div className="pb-6 mb-6 border-b border-slate-200">
                   <h3 className="text-2xl font-display font-bold text-[#0A0F2E]">
-                    Submit Project Scope
+                    Connect with Us
                   </h3>
                 </div>
 
