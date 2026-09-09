@@ -981,7 +981,7 @@ export default function HomePage({ navigate }) {
                     Production Architectures Slider
                   </div>
                   <div className="text-[11px] font-mono text-slate-500">
-                    Swipe, drag, or slide to inspect live deployments &bull; Node {String(currentCaseIndex + 1).padStart(2, '0')} of {String(portfolioProjects.length).padStart(2, '0')}
+                    Swipe, drag, or slide to inspect live deployments &bull; {String(currentCaseIndex + 1).padStart(2, '0')} of {String(portfolioProjects.length).padStart(2, '0')}
                   </div>
                 </div>
               </div>
@@ -1046,18 +1046,7 @@ export default function HomePage({ navigate }) {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-[10px]">
-                          Telemetry Node Active
-                        </div>
-                      )}
-                      
-                      {/* Node Index Badge */}
-                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-mono font-bold text-blue-700 shadow-xs">
-                        NODE #{String(idx + 1).padStart(2, '0')}
-                      </div>
-
-                      {p.isFlagship && (
-                        <div className="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-amber-500 text-white text-[9px] font-mono font-bold uppercase tracking-wider flex items-center gap-1 shadow-xs">
-                          <Sparkles className="w-2.5 h-2.5" /> Flagship
+                          Telemetry Active
                         </div>
                       )}
                     </div>
