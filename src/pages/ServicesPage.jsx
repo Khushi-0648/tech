@@ -112,7 +112,7 @@ export default function ServicesPage({ navigate }) {
                 <div className="text-xs text-slate-300">Avg Cost Reduction</div>
               </div>
               <div className="p-4 rounded-xl card-dark-uniform shadow-md text-center">
-                <div className="font-mono text-2xl font-bold text-[#00C2FF]">24/7/365</div>
+                <div className="font-mono text-2xl font-bold text-[#00C2FF]">24/7</div>
                 <div className="text-xs text-slate-300">Noida NOC Support</div>
               </div>
             </div>
@@ -140,12 +140,11 @@ export default function ServicesPage({ navigate }) {
               <motion.button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.96 }}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-none cursor-pointer ${
                   selectedCategory === cat.id
                     ? 'bg-blue-600 text-white font-bold shadow-md'
-                    : 'bg-white text-slate-700 hover:text-blue-700 border border-slate-200 hover:border-blue-300 shadow-xs'
+                    : 'bg-white !text-blue-600 font-bold border border-slate-200 shadow-xs'
                 }`}
               >
                 {cat.label}
@@ -182,26 +181,18 @@ export default function ServicesPage({ navigate }) {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none" />
-                      <div className="absolute top-3 right-3 px-2 py-0.5 rounded backdrop-blur-md border border-blue-200 bg-white/90 text-blue-700 font-mono text-[10px] font-bold shadow">
-                        0{index + 1} // DOMAIN
-                      </div>
                     </div>
                   )}
 
                   <div>
-                    {/* Icon & ID Header */}
-                    <div className="flex items-center justify-between mb-5">
+                    {/* Icon Header */}
+                    <div className="flex items-center mb-5">
                       <div 
                         onClick={() => navigate(service.slug || service.id)}
                         className="w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-sm bg-blue-50 border border-blue-200 text-blue-600 group-hover:bg-blue-600 group-hover:text-white cursor-pointer"
                       >
                         <Icon className="w-6 h-6" />
                       </div>
-                      {!service.image && (
-                        <span className="font-mono text-[11px] px-2 py-1 rounded border font-semibold bg-blue-50 border-blue-200 text-blue-700">
-                          0{index + 1} // DOMAIN
-                        </span>
-                      )}
                     </div>
 
                     {/* Title & Short Desc */}
@@ -261,7 +252,7 @@ export default function ServicesPage({ navigate }) {
                   <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                     <button
                       onClick={() => navigate(service.slug || service.id)}
-                      className="text-xs font-mono flex items-center gap-1 transition-colors cursor-pointer font-bold text-blue-600 hover:text-blue-800"
+                      className="text-xs font-mono flex items-center gap-1 cursor-pointer font-bold text-blue-600"
                     >
                       <span>Explore Dedicated Page</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -269,10 +260,10 @@ export default function ServicesPage({ navigate }) {
 
                     <button
                       onClick={() => navigate('contact')}
-                      className="px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer shadow-xs bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-600 hover:text-white"
+                      className="px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-sm bg-blue-600 hover:bg-blue-700 text-white hover:shadow-md transition-all duration-200 active:scale-95"
                     >
                       <span>Scope Service</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-3 h-3 text-white" />
                     </button>
                   </div>
                 </motion.div>

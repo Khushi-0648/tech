@@ -20,7 +20,7 @@ A high-performance, cosmic galaxy-themed React 19 web application for **TechPros
 ## 🛠️ Authentic Data & Content Included
 
 - **Headquarters**: Sector 62, Noida, Uttar Pradesh 201309, India
-- **Hotline**: `+91 88514 22486` (24/7/365 NOC Support)
+- **Hotline**: `+91 88514 22486` (24/7 NOC Support)
 - **Email**: `help@techprosnetwork.com`
 - **10 Engineering Service Domains**:
   1. Web Development & Scalable Engineering

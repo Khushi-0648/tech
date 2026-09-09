@@ -104,7 +104,7 @@ export const servicesPageData = {
   domain: 'Artificial Intelligence & Automation',
   architecture: 'Modular / Cloud-Native LLMs & Agents',
   securityStandards: ['OWASP LLM Top 10', 'Zero-Trust Data Vault'],
-  deliverySLA: '24/7/365 Proactive NOC Monitoring',
+  deliverySLA: '24/7 Proactive NOC Monitoring',
   uptimeGuarantee: '99.99%',
   avgExecutionTime: '< 0.5s Autonomous Response'
 };`,
@@ -194,7 +194,7 @@ export const servicesPageData = {
   domain: 'Business Analytics & BI',
   architecture: 'Unified Semantic Layer & Real-time BI',
   governance: 'Single Source of Truth / Role-based Access',
-  deliverySLA: '24/7/365 Proactive NOC Uptime',
+  deliverySLA: '24/7 Proactive NOC Uptime',
   uptimeGuarantee: '99.99%',
   refreshLatency: '< 15s Direct Query Telemetry'
 };`,
@@ -281,7 +281,7 @@ export const servicesPageData = {
   domain: 'Cloud Infrastructure & DevOps',
   architecture: 'Multi-Cloud / Kubernetes / IaC',
   securityStandards: ['Zero-Trust', 'SOC 2 Type II', 'ISO 27001'],
-  deliverySLA: '24/7/365 Proactive NOC Monitoring',
+  deliverySLA: '24/7 Proactive NOC Monitoring',
   uptimeGuarantee: '99.99%',
   avgExecutionTime: '< 0.5s Worldwide Edge Routing'
 };`,
@@ -369,7 +369,7 @@ export const servicesPageData = {
   domain: 'Consulting & Operations',
   architecture: 'Operational Blueprinting / Lean Six Sigma',
   methodology: 'Outcome-Based Engagements',
-  deliverySLA: '24/7/365 Continuous Governance',
+  deliverySLA: '24/7 Continuous Governance',
   uptimeGuarantee: '99.99%',
   avgExecutionTime: 'Milestone-Driven Sprint Cadence'
 };`,
@@ -456,7 +456,7 @@ export const servicesPageData = {
   domain: 'Cybersecurity & Defense',
   architecture: 'Zero-Trust / SIEM / EDR / SOAR',
   securityStandards: ['OWASP Top 10 Hardened', 'ISO 27001', 'SOC 2 Type II'],
-  deliverySLA: '24/7/365 Proactive SOC Desk',
+  deliverySLA: '24/7 Proactive SOC Desk',
   uptimeGuarantee: '99.99%',
   avgExecutionTime: '< 15 Mins Mean-Time-to-Detect'
 };`,
@@ -543,7 +543,7 @@ export const servicesPageData = {
   domain: 'Data Analytics & Pipelines',
   architecture: 'Modern Data Stack / Lakehouse / dbt',
   securityStandards: ['Column-Level Encryption', 'GDPR Masking'],
-  deliverySLA: '24/7/365 Proactive NOC Pipeline Health',
+  deliverySLA: '24/7 Proactive NOC Pipeline Health',
   uptimeGuarantee: '99.99%',
   avgExecutionTime: '< 45s Multi-Million Row Aggregations'
 };`,
@@ -630,7 +630,7 @@ export const servicesPageData = {
   domain: 'Enterprise Solutions & ERP/CRM',
   architecture: 'API-Led Integration / Event-Driven ESB',
   platforms: ['SAP S/4HANA', 'Salesforce', 'Dynamics 365', 'ServiceNow'],
-  deliverySLA: '24/7/365 Proactive NOC Hypercare',
+  deliverySLA: '24/7 Proactive NOC Hypercare',
   uptimeGuarantee: '99.99%',
   adoptionRate: '94% User Adoption in 30 Days'
 };`,
@@ -719,7 +719,7 @@ export const servicesPageData = {
   architecture: 'Edge-to-Cloud / Industrial IoT / SCADA',
   protocols: ['MQTT', 'OPC-UA', 'Modbus TCP', 'CAN bus'],
   safetyStandards: ['IEC 62443 Certified', 'Zero-Accident Design'],
-  deliverySLA: '24/7/365 Proactive NOC Monitoring',
+  deliverySLA: '24/7 Proactive NOC Monitoring',
   uptimeGuarantee: '99.99%',
   unplannedDowntimeReduction: '94%'
 };`,
@@ -806,7 +806,7 @@ export const servicesPageData = {
   domain: 'Network Solutions & SD-WAN',
   architecture: 'Software-Defined WAN / SASE / Zero-Trust',
   hardwarePartners: ['Cisco', 'Palo Alto', 'Fortinet', 'Aruba'],
-  deliverySLA: '24/7/365 Global Network Operations Center',
+  deliverySLA: '24/7 Global Network Operations Center',
   uptimeGuarantee: '99.97% WAN Uptime',
   avgIncidentAcknowledge: '< 12 Mins NOC Response'
 };`,

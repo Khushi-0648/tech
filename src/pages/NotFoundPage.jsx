@@ -45,15 +45,15 @@ export default function NotFoundPage({ navigate }) {
             onClick={() => navigate('home')}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-medium text-sm transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-98"
           >
-            <Home className="w-4 h-4" />
+            <Home className="w-4 h-4 text-white" />
             <span>Back to Home</span>
           </button>
 
           <button
             onClick={() => navigate('contact')}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-medium text-sm transition-all shadow-xs cursor-pointer active:scale-98"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-sky-600 hover:text-sky-700 font-semibold text-sm transition-all shadow-xs cursor-pointer active:scale-98"
           >
-            <Phone className="w-4 h-4 text-slate-500" />
+            <Phone className="w-4 h-4 text-sky-600" />
             <span>Contact Support</span>
           </button>
         </div>

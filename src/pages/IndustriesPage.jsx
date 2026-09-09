@@ -70,10 +70,10 @@ export default function IndustriesPage({ navigate }) {
                 <button
                   key={ind.id}
                   onClick={() => setSelectedIndustry(ind)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-center justify-between cursor-pointer ${
+                  className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-center justify-between cursor-pointer group ${
                     isSelected
-                      ? 'bg-blue-50/90 border-blue-500 shadow-md text-[#0A0F2E]'
-                      : 'bg-white border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 shadow-xs'
+                      ? 'bg-blue-600 border-blue-600 shadow-md text-white'
+                      : 'bg-white border-slate-200 hover:border-slate-400 text-blue-700 hover:!text-black shadow-xs'
                   }`}
                 >
                   <div className="flex items-center gap-3.5">
@@ -84,21 +84,27 @@ export default function IndustriesPage({ navigate }) {
                         className="w-full h-full object-cover"
                       />
                       <div className={`absolute inset-0 transition-colors flex items-center justify-center ${
-                        isSelected ? 'bg-blue-600/85 text-white' : 'bg-slate-900/50 text-white'
+                        isSelected ? 'bg-blue-800/85 text-white' : 'bg-slate-900/50 text-white'
                       }`}>
                         <Icon className="w-4 h-4" />
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-display font-semibold text-sm sm:text-base ${isSelected ? 'text-blue-700' : 'text-[#0A0F2E]'}`}>
+                      <h4 className={`font-display font-semibold text-sm sm:text-base transition-colors duration-150 ${
+                        isSelected ? '!text-white' : 'text-blue-700 group-hover:!text-black'
+                      }`}>
                         {ind.title}
                       </h4>
-                      <p className="text-xs text-slate-500 font-sans line-clamp-1">
+                      <p className={`text-xs font-sans line-clamp-1 transition-colors duration-150 ${
+                        isSelected ? 'text-blue-100' : 'text-slate-500 group-hover:!text-black'
+                      }`}>
                         {ind.summary}
                       </p>
                     </div>
                   </div>
-                  <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isSelected ? 'text-blue-600 translate-x-1' : 'text-slate-400'}`} />
+                  <ChevronRight className={`w-4 h-4 shrink-0 transition-all duration-150 ${
+                    isSelected ? 'text-white translate-x-1' : 'text-slate-400 group-hover:!text-black group-hover:translate-x-1'
+                  }`} />
                 </button>
               );
             })}
@@ -194,10 +200,7 @@ export default function IndustriesPage({ navigate }) {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-xs text-slate-500 font-mono">
-                  SLA Backed &bull; Sector 62 Engineering Pod
-                </div>
+              <div className="pt-6 border-t border-slate-200 flex items-center justify-end">
                 <button
                   onClick={() => navigate('contact')}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
@@ -268,7 +271,7 @@ export default function IndustriesPage({ navigate }) {
                         {ind.summary}
                       </p>
 
-                      <div className="flex flex-wrap gap-1 mb-2">
+                      <div className="flex flex-wrap gap-1">
                         {ind.compliance.slice(0, 2).map((comp, idx) => (
                           <span key={idx} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#05081A] text-[#00C2FF] border border-[#1a2a5e]">
                             {comp}
@@ -276,12 +279,6 @@ export default function IndustriesPage({ navigate }) {
                         ))}
                       </div>
                     </div>
-                  </div>
-
-                  <div className="p-4 pt-0">
-                    <span className="text-[11px] font-mono text-[#00C2FF] flex items-center gap-1 group-hover:underline font-semibold">
-                      Inspect Blueprint &rarr;
-                    </span>
                   </div>
                 </div>
               );

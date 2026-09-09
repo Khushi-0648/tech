@@ -30,7 +30,7 @@ export default function ContactPage({ navigate }) {
     email: '',
     phone: '',
     company: '',
-    budget: '$5k - $15k',
+    service: 'Web Development & Scalable Engineering',
     message: ''
   });
 
@@ -111,7 +111,7 @@ export default function ContactPage({ navigate }) {
       email: '',
       phone: '',
       company: '',
-      budget: '$5k - $15k',
+      service: 'Web Development & Scalable Engineering',
       message: ''
     });
   };
@@ -164,19 +164,10 @@ export default function ContactPage({ navigate }) {
                 className="rounded-3xl card-light-uniform p-8 sm:p-10 shadow-xl border border-slate-200 bg-white"
               >
                 
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200">
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-blue-700 font-semibold">
-                      Encrypted Channel
-                    </span>
-                    <h3 className="text-2xl font-display font-bold text-[#0A0F2E]">
-                      Submit Project Scope
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs font-mono font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>SLA: &lt; 2 Hrs</span>
-                  </div>
+                <div className="pb-6 mb-6 border-b border-slate-200">
+                  <h3 className="text-2xl font-display font-bold text-[#0A0F2E]">
+                    Submit Project Scope
+                  </h3>
                 </div>
 
                 {submitted ? (
@@ -354,20 +345,26 @@ export default function ContactPage({ navigate }) {
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="contact-budget" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
-                          Estimated Budget Tier
+                        <label htmlFor="contact-service" className="block text-xs font-mono text-slate-700 uppercase mb-1.5 font-bold">
+                          Services
                         </label>
                         <select
-                          id="contact-budget"
-                          name="budget"
-                          value={formData.budget}
-                          onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                          id="contact-service"
+                          name="service"
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                           className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 font-sans outline-none cursor-pointer"
                         >
-                          <option value="<$5k">Under $5k (Sprint / Pilot)</option>
-                          <option value="$5k - $15k">$5k - $15k (Full Production App)</option>
-                          <option value="$15k - $50k">$15k - $50k (Enterprise Scale Platform)</option>
-                          <option value="$50k+">$50k+ (Enterprise Multi-Cloud / Transformation)</option>
+                          <option value="Web Development & Scalable Engineering">Web Development &amp; Scalable Engineering</option>
+                          <option value="Artificial Intelligence & Automation">Artificial Intelligence &amp; Automation</option>
+                          <option value="Business Analytics">Business Analytics</option>
+                          <option value="Cloud Infrastructure & DevOps">Cloud Infrastructure &amp; DevOps</option>
+                          <option value="Consulting & Operations">Consulting &amp; Operations</option>
+                          <option value="Cybersecurity & Zero-Trust">Cybersecurity &amp; Zero-Trust</option>
+                          <option value="Data Analytics & Intelligence">Data Analytics &amp; Intelligence</option>
+                          <option value="Enterprise Solutions & ERP">Enterprise Solutions &amp; ERP</option>
+                          <option value="Industrial Autonomy & Engineering">Industrial Autonomy &amp; Engineering</option>
+                          <option value="Network Solutions & Infrastructure">Network Solutions &amp; Infrastructure</option>
                         </select>
                       </div>
                     </div>
@@ -444,7 +441,8 @@ export default function ContactPage({ navigate }) {
                     <div>
                       <div className="text-xs font-mono text-slate-500">Physical Address</div>
                       <div className="text-[#0A0F2E] font-sans leading-snug font-medium">
-                        Sector 62, Noida, Uttar Pradesh 201309, India
+                        Noida, Uttar Pradesh, India<br />
+                        Sector 62, Noida, UP 201309
                       </div>
                     </div>
                   </div>

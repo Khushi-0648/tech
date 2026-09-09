@@ -745,40 +745,41 @@ export default function HomePage({ navigate }) {
               </p>
             </div>
 
-            {/* Quick Architecture Switcher & Catalog Button */}
+            {/* Quick Architecture Switcher & Catalog Button - Unified Navigation Button with Number in Same Button */}
             <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
-              <div className="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 font-mono text-xs text-slate-700 flex items-center gap-2 shadow-xs">
-                <span className="text-blue-700 font-semibold uppercase text-[10px]">Node</span>
-                <span className="text-blue-700 font-bold text-sm">{String(currentCaseIndex + 1).padStart(2, '0')}</span>
-                <span className="text-slate-400">/</span>
-                <span className="text-slate-500">{String(portfolioProjects.length).padStart(2, '0')}</span>
-              </div>
-
-              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white border border-slate-200 shadow-xs">
+              <div className="inline-flex items-center rounded-xl bg-white border border-slate-200 shadow-xs p-1 font-mono text-xs">
                 <button
                   onClick={handlePrevCaseStudy}
                   title="Previous Architecture"
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer active:scale-95"
+                  className="w-9 h-9 min-w-[36px] min-h-[36px] rounded-lg !text-blue-700 hover:!text-blue-900 hover:bg-slate-100 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                   aria-label="Previous Case Study"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-4 h-4 !text-blue-700" />
                 </button>
+
+                <div className="px-3.5 py-1 flex items-center gap-1.5 select-none">
+                  <span className="!text-blue-700 font-semibold uppercase text-[10px] tracking-wider">Node</span>
+                  <span className="!text-blue-700 font-bold text-sm">{String(currentCaseIndex + 1).padStart(2, '0')}</span>
+                  <span className="text-slate-400">/</span>
+                  <span className="text-slate-500 font-semibold">{String(portfolioProjects.length).padStart(2, '0')}</span>
+                </div>
+
                 <button
                   onClick={handleNextCaseStudy}
                   title="Next Architecture"
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg text-slate-600 hover:text-blue-600 hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer active:scale-95"
+                  className="w-9 h-9 min-w-[36px] min-h-[36px] rounded-lg !text-blue-700 hover:!text-blue-900 hover:bg-slate-100 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                   aria-label="Next Case Study"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-4 h-4 !text-blue-700" />
                 </button>
               </div>
 
               <button
                 onClick={() => navigate('projects')}
-                className="px-5 py-2.5 rounded-xl border border-blue-200 text-blue-700 hover:bg-blue-50 bg-white font-mono text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0 shadow-xs"
+                className="px-5 py-2.5 rounded-xl border border-blue-200 !text-blue-700 hover:bg-blue-50 bg-white font-mono text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0 shadow-xs"
               >
-                <span>Explore All 8 Client Builds</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span className="!text-blue-700">Explore All 8 Client Builds</span>
+                <ArrowRight className="w-3.5 h-3.5 !text-blue-700" />
               </button>
             </div>
           </div>
@@ -856,18 +857,18 @@ export default function HomePage({ navigate }) {
                     <button
                       onClick={handlePrevCaseStudy}
                       aria-label="Previous Architecture"
-                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
+                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-blue-600 hover:text-blue-700 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
                     >
-                      <ChevronLeft className="w-4 h-4" />
+                      <ChevronLeft className="w-4 h-4 text-blue-600" />
                     </button>
                   </div>
                   <div className="absolute inset-y-0 right-3 flex items-center z-20 pointer-events-none">
                     <button
                       onClick={handleNextCaseStudy}
                       aria-label="Next Architecture"
-                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
+                      className="pointer-events-auto w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 hover:border-blue-500 text-blue-600 hover:text-blue-700 flex items-center justify-center transition-all shadow-md cursor-pointer active:scale-90"
                     >
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-4 h-4 text-blue-600" />
                     </button>
                   </div>
 
@@ -877,10 +878,10 @@ export default function HomePage({ navigate }) {
                       href={selectedCaseStudy.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3.5 py-2 rounded-xl bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 text-blue-700 hover:text-blue-900 font-mono text-xs font-bold flex items-center gap-2 transition-all shadow-md active:scale-95"
+                      className="px-3.5 py-2 rounded-xl bg-white/95 hover:bg-white backdrop-blur-md border border-slate-200 !text-blue-700 hover:!text-blue-900 font-mono text-xs font-bold flex items-center gap-2 transition-all shadow-md active:scale-95"
                     >
-                      <span>Visit Live Domain</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span className="!text-blue-700">Visit Live Domain</span>
+                      <ExternalLink className="w-3.5 h-3.5 !text-blue-700" />
                     </a>
                   </div>
                 </div>
@@ -971,10 +972,10 @@ export default function HomePage({ navigate }) {
 
                   <button
                     onClick={() => navigate('projects')}
-                    className="px-5 py-3 rounded-xl font-mono text-xs font-bold text-blue-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    className="px-5 py-3 rounded-xl font-mono text-xs font-bold !text-blue-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   >
-                    <span>Inspect Full Specification</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span className="!text-blue-700">Inspect Full Specification</span>
+                    <ArrowRight className="w-3.5 h-3.5 !text-blue-700" />
                   </button>
                 </div>
               </div>
@@ -998,26 +999,28 @@ export default function HomePage({ navigate }) {
                 </div>
               </div>
 
-              {/* Slider Prev / Next Controls */}
-              <div className="flex items-center gap-2">
+              {/* Slider Prev / Next Controls - Unified Navigation Button with Number in Same Button */}
+              <div className="inline-flex items-center rounded-xl bg-white border border-slate-200 shadow-xs p-1 font-mono text-xs">
                 <button
                   onClick={handlePrevCaseStudy}
                   aria-label="Previous Project"
-                  className="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 font-mono text-xs flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-xs"
+                  className="px-2.5 py-1.5 rounded-lg hover:bg-slate-100 !text-blue-700 hover:!text-blue-900 font-bold flex items-center gap-1.5 transition-all cursor-pointer active:scale-95"
                 >
-                  <ChevronLeft className="w-4 h-4" />
-                  <span className="hidden sm:inline">Prev</span>
+                  <ChevronLeft className="w-4 h-4 !text-blue-700" />
+                  <span className="hidden sm:inline !text-blue-700">Prev</span>
                 </button>
-                <div className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 font-mono text-xs text-blue-700 font-semibold shadow-xs">
-                  {String(currentCaseIndex + 1).padStart(2, '0')} / {String(portfolioProjects.length).padStart(2, '0')}
+                <div className="px-3 py-1 border-x border-slate-200 !text-blue-700 font-semibold select-none flex items-center gap-1">
+                  <span className="font-bold">{String(currentCaseIndex + 1).padStart(2, '0')}</span>
+                  <span className="text-slate-400">/</span>
+                  <span className="text-slate-500">{String(portfolioProjects.length).padStart(2, '0')}</span>
                 </div>
                 <button
                   onClick={handleNextCaseStudy}
                   aria-label="Next Project"
-                  className="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 font-mono text-xs flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-xs"
+                  className="px-2.5 py-1.5 rounded-lg hover:bg-slate-100 !text-blue-700 hover:!text-blue-900 font-bold flex items-center gap-1.5 transition-all cursor-pointer active:scale-95"
                 >
-                  <span className="hidden sm:inline">Next</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <span className="hidden sm:inline !text-blue-700">Next</span>
+                  <ChevronRight className="w-4 h-4 !text-blue-700" />
                 </button>
               </div>
             </div>
@@ -1418,7 +1421,7 @@ export default function HomePage({ navigate }) {
                     <Activity className="w-4 h-4" />
                   </div>
                   <h4 className="font-display font-bold text-base text-[#0A0F2E]">
-                    24/7/365 Dedicated NOC Operations
+                    24/7 Dedicated NOC Operations
                   </h4>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed font-sans">

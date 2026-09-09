@@ -164,7 +164,7 @@ export default function HeroEditorialStagger({ navigate }) {
               {/* Card 4: Deep Midnight Cyber Dark Card */}
               <div className="p-3.5 rounded-2xl bg-[#070e28]/95 border border-[#1a2858] text-center relative overflow-hidden group shadow-lg transition-all duration-300 hover:border-[#00C2FF]">
                 <div className="font-display font-black text-2xl sm:text-3xl text-emerald-400">
-                  24/7/365
+                  24/7
                 </div>
                 <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300 mt-1">
                   Noida NOC Guard

@@ -89,6 +89,17 @@ export default function Navbar({ currentRoute, navigate }) {
     setServicesDropdownOpen((prev) => !prev);
   };
 
+  const handleServicesMouseEnter = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setServicesDropdownOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 250);
+  };
+
   // Structured Categorized Pillars for the 10 Production Services
   const servicePillars = [
     {
@@ -260,12 +271,14 @@ export default function Navbar({ currentRoute, navigate }) {
               About Us
             </button>
 
-            {/* 2. Services Option Bar Trigger Button */}
+            {/* 2. Services Link & Options Trigger */}
             <button
-              onClick={toggleServices}
+              onClick={() => handleNav('services')}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
               aria-expanded={servicesDropdownOpen}
               aria-haspopup="true"
-              aria-label="Toggle Services Options Bar"
+              aria-label="Services Page and Options"
               className={`text-sm font-medium tracking-wide transition-all flex items-center gap-1.5 cursor-pointer py-1.5 px-3 rounded-xl relative ${
                 servicesDropdownOpen
                   ? 'text-[var(--accent-blue)] bg-[var(--accent-blue)]/15 font-semibold ring-1 ring-[var(--accent-blue)]/40 shadow-[0_0_15px_rgba(0,194,255,0.25)]'
@@ -311,16 +324,13 @@ export default function Navbar({ currentRoute, navigate }) {
             {/* 5. Softwares */}
             <button
               onClick={() => handleNav('softwares')}
-              className={`text-sm font-medium tracking-wide transition-all flex items-center gap-1.5 cursor-pointer py-1.5 relative ${
+              className={`text-sm font-medium tracking-wide transition-all cursor-pointer py-1.5 relative ${
                 currentRoute === 'softwares'
                   ? 'text-[var(--accent-blue)] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent-blue)] after:rounded-full after:shadow-[0_0_8px_rgba(0,194,255,0.8)]'
                   : 'text-slate-200 hover:text-white'
               }`}
             >
-              <span>Softwares</span>
-              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-emerald-500/15 text-emerald-400 font-bold">
-                Free
-              </span>
+              Softwares
             </button>
 
             {/* 6. Contact */}
@@ -373,6 +383,8 @@ export default function Navbar({ currentRoute, navigate }) {
         {/* 3. High-End Panoramic Services Option Bar */}
         {servicesDropdownOpen && (
           <div 
+            onMouseEnter={handleServicesMouseEnter}
+            onMouseLeave={handleServicesMouseLeave}
             className="w-full border-t border-[var(--header-border)] bg-[var(--header-bg)] backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.7),0_10px_35px_rgba(0,194,255,0.15)] animate-in fade-in slide-in-from-top-2 duration-200"
             style={{
               backgroundColor: 'var(--header-bg)',
@@ -698,16 +710,23 @@ export default function Navbar({ currentRoute, navigate }) {
 
               {/* 2. Services Accordion Panel with Categorized Option Deck */}
               <div className="rounded-xl border border-[var(--border-color)] bg-[var(--bg-panel-subtle)] overflow-hidden">
-                <button
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="w-full text-left p-3.5 flex items-center justify-between text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-blue)] cursor-pointer transition-colors"
-                >
-                  <div className="flex items-center gap-3">
+                <div className="w-full flex items-center justify-between p-3.5">
+                  <button
+                    onClick={() => handleNav('services')}
+                    className="flex items-center gap-3 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-blue)] cursor-pointer transition-colors flex-1 text-left"
+                  >
                     <Code2 className="w-4.5 h-4.5 text-[var(--accent-blue)]" />
-                    <span>Services Options (10 Domains)</span>
-                  </div>
-                  <ChevronDown className={`w-4 h-4 text-[var(--accent-blue)] transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
+                    <span>Services</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-[var(--accent-blue)]/20 text-[var(--accent-blue)] font-bold">10</span>
+                  </button>
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="p-1.5 text-[var(--accent-blue)] hover:bg-[var(--btn-bg)] rounded-lg cursor-pointer transition-colors"
+                    aria-label="Toggle services list"
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
 
                 {mobileServicesOpen && (
                   <div className="px-3 pb-3 pt-1 border-t border-[var(--border-color)] bg-[var(--bg-main)]/50 space-y-2 max-h-64 overflow-y-auto no-scrollbar">
@@ -794,7 +813,7 @@ export default function Navbar({ currentRoute, navigate }) {
                   <Laptop className="w-4.5 h-4.5 text-[var(--accent-blue)] shrink-0" />
                   <span className="text-sm font-medium">Softwares</span>
                 </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-bold">Free</span>
+                <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
               </button>
 
               {/* 6. Contact */}

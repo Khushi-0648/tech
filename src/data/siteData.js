@@ -676,12 +676,100 @@ export const faqList = [
 ];
 
 export const globalNocCenters = [
-  { city: "Noida HQ", country: "India", status: "Primary NOC Active", ping: "8ms", load: "42%" },
-  { city: "Singapore", country: "Singapore", status: "Active Edge", ping: "24ms", load: "58%" },
-  { city: "London", country: "United Kingdom", status: "Active Edge", ping: "62ms", load: "51%" },
-  { city: "New York", country: "United States", status: "Active Edge", ping: "78ms", load: "64%" },
-  { city: "Frankfurt", country: "Germany", status: "Active Edge", ping: "65ms", load: "48%" },
-  { city: "Tokyo", country: "Japan", status: "Active Edge", ping: "45ms", load: "39%" },
-  { city: "Dubai", country: "UAE", status: "Active Edge", ping: "38ms", load: "44%" },
-  { city: "Sydney", country: "Australia", status: "Active Edge", ping: "89ms", load: "53%" }
+  {
+    id: "noida-central-noc",
+    name: "Noida Central Command NOC",
+    city: "Noida HQ",
+    country: "Sector 62, Noida (HQ)",
+    station: "24/7 Central Command & Incident Response",
+    status: "Primary NOC Active",
+    ping: "4ms",
+    load: "38%",
+    spec: "24/7 Continuous Ops • Instant NOC Dispatch",
+    description: "Central command operations room located at our Sector 62, Noida headquarters. Houses Tier-3 network architects managing 24/7 uptime monitoring and automated incident mitigation."
+  },
+  {
+    id: "cloud-devops-mesh",
+    name: "Cloud Ops & Kubernetes Mesh",
+    city: "AWS ap-south-1 Link",
+    country: "Managed from Noida NOC",
+    station: "Multi-Cloud Infrastructure & Containers",
+    status: "Direct Peering Active",
+    ping: "8ms",
+    load: "46%",
+    spec: "Direct AWS ap-south-1 Fiber • 100 Gbps Dark Fiber",
+    description: "Cloud-native infrastructure orchestrated by Noida DevOps engineers. Features direct low-latency fiber cross-connect to AWS Mumbai (ap-south-1), GCP, and Azure clusters."
+  },
+  {
+    id: "ai-automation-lab",
+    name: "AI & Autonomous RPA Lab",
+    city: "AI Systems Hub",
+    country: "Sector 62, Noida (HQ)",
+    station: "Autonomous Agents & ML Workflows",
+    status: "Model Telemetry Live",
+    ping: "12ms",
+    load: "52%",
+    spec: "Autonomous Agents • 40% Processing Acceleration",
+    description: "Noida AI engineering division deploying proprietary automation frameworks, LLM inference pipelines, and automated business workflows that reduce operational costs by up to 60%."
+  },
+  {
+    id: "devsecops-soc",
+    name: "DevSecOps & Zero-Trust SOC",
+    city: "Security Center",
+    country: "Sector 62, Noida (HQ)",
+    station: "Cybersecurity & Compliance Operations",
+    status: "ISO 27001 & SOC 2",
+    ping: "6ms",
+    load: "31%",
+    spec: "OWASP WSTG v4.2 • TLS 1.3 Strict • Threat Defense",
+    description: "Bank-grade Security Operations Center in Noida enforcing zero-trust architecture, automated vulnerability scanning, end-to-end encryption, and rigorous audit compliance."
+  },
+  {
+    id: "web-engineering-bay",
+    name: "Web Architecture & Engineering",
+    city: "Web Development",
+    country: "Sector 62, Noida (HQ)",
+    station: "Full-Stack Platforms & Headless CMS",
+    status: "Production Live",
+    ping: "7ms",
+    load: "44%",
+    spec: "React 19 & Next.js • Headless • Sub-Second LCP",
+    description: "Our core Noida software development hub engineering high-concurrency enterprise web platforms, custom web apps, and API gateways with sub-second response times."
+  },
+  {
+    id: "global-edge-network",
+    name: "Global Edge Delivery Routing",
+    city: "30+ Countries",
+    country: "Edge-Routed from Noida",
+    station: "Worldwide Edge CDN & Magic Transit",
+    status: "Global Delivery Live",
+    ping: "18ms",
+    load: "58%",
+    spec: "30+ Countries Served • Cloudflare Magic Transit",
+    description: "Global delivery edge mesh supervised 24/7 by our Noida NOC team, routing traffic with zero packet loss to enterprise clients across the US, UK, UAE, and worldwide."
+  },
+  {
+    id: "data-analytics-core",
+    name: "Data Analytics & Big Data ETL",
+    city: "Analytics Engine",
+    country: "Sector 62, Noida (HQ)",
+    station: "Real-Time Streaming & Business Intelligence",
+    status: "Streaming Ingestion",
+    ping: "9ms",
+    load: "47%",
+    spec: "Real-Time KPIs • Sub-12ms Aggregation • Kafka",
+    description: "Noida data engineering core processing high-frequency data pipelines, real-time KPI visualization, and enterprise data lake integrations."
+  },
+  {
+    id: "client-delivery-wing",
+    name: "Client Success & Technical Escalation",
+    city: "Operations Wing",
+    country: "Sector 62, Noida (HQ)",
+    station: "SLA Assurance & Enterprise Support",
+    status: "24/7 Support Live",
+    ping: "5ms",
+    load: "35%",
+    spec: "99.8% Client Retention • 500+ Delivered Platforms",
+    description: "Dedicated Noida client delivery engineers providing round-the-clock technical escalation, rapid onboarding, and SLA-backed guarantees for international accounts."
+  }
 ];

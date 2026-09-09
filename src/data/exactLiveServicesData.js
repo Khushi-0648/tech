@@ -257,7 +257,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const aiAutomationEngine = {\n  domain: 'Artificial Intelligence and Automation',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const aiAutomationEngine = {\n  domain: 'Artificial Intelligence and Automation',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -412,7 +412,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const businessAnalyticsEngine = {\n  domain: 'Business Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const businessAnalyticsEngine = {\n  domain: 'Business Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -562,7 +562,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const cloudInfrastructureEngine = {\n  domain: 'Cloud Infrastructure',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const cloudInfrastructureEngine = {\n  domain: 'Cloud Infrastructure',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -718,7 +718,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const consultingOperationsEngine = {\n  domain: 'Consulting & Operations',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const consultingOperationsEngine = {\n  domain: 'Consulting & Operations',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -867,7 +867,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const cybersecurityEngine = {\n  domain: 'Cybersecurity',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const cybersecurityEngine = {\n  domain: 'Cybersecurity',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -875,7 +875,7 @@ export const exactLiveServicesData = {
         "lbl": "WSTG v4.2 Certified"
       },
       {
-        "val": "24/7/365",
+        "val": "24/7",
         "lbl": "Proactive SOC Defense"
       },
       {
@@ -1018,7 +1018,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const dataAnalyticsEngine = {\n  domain: 'Data Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const dataAnalyticsEngine = {\n  domain: 'Data Analytics',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -1169,7 +1169,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const enterpriseSolutionsEngine = {\n  domain: 'Enterprise Solutions',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const enterpriseSolutionsEngine = {\n  domain: 'Enterprise Solutions',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -1325,7 +1325,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const industrialAutonomyEngine = {\n  domain: 'Industrial Autonomy and Engineering',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const industrialAutonomyEngine = {\n  domain: 'Industrial Autonomy and Engineering',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {
@@ -1476,7 +1476,7 @@ export const exactLiveServicesData = {
       "24/7 NOC"
     ],
     "consoleTab": "ServiceArchitecture.ts",
-    "consoleCode": "export const networkSolutionsEngine = {\n  domain: 'Network Solutions and Services',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7/365 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
+    "consoleCode": "export const networkSolutionsEngine = {\n  domain: 'Network Solutions and Services',\n  architecture: 'Modular / Cloud-Native',\n  securityStandards: ['OWASP Hardened', 'Zero-Trust'],\n  deliverySLA: '24/7 Proactive NOC',\n  uptimeGuarantee: 99.99,\n  avgExecutionTime: '< 0.5s Worldwide'\n};",
     "consoleStat": "● Production Active",
     "metrics": [
       {

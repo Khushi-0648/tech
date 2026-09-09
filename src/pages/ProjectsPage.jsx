@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Sparkles, Shield, ArrowRight, CheckCircle2, 
-  Terminal, Globe, Lock, Layers, Laptop, Eye, X, Filter,
-  RotateCw, ChevronLeft, ChevronRight, Activity
+  Terminal, Globe, Lock, Layers, Laptop, X, Filter,
+  RotateCw, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { portfolioProjects, companyInfo } from '../data/siteData';
 
@@ -88,7 +88,7 @@ export default function ProjectsPage({ navigate }) {
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-blue-600 text-white font-bold shadow-md border border-blue-600'
-                  : 'bg-white text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-300 shadow-sm'
+                  : 'bg-white text-blue-700 hover:text-blue-800 border border-slate-200 hover:border-blue-300 shadow-sm'
               }`}
             >
               {cat.label}
@@ -184,38 +184,19 @@ export default function ProjectsPage({ navigate }) {
                     
                     {/* Top ambient vignette */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
-                    
-                    {/* Flagship Banner Pill */}
-                    {project.isFlagship && (
-                      <div className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-white/95 border border-blue-200 text-blue-700 text-[10px] font-mono font-bold backdrop-blur-md shadow-sm flex items-center gap-1">
-                        <Sparkles className="w-3 h-3 text-blue-600" />
-                        <span>Flagship Architecture</span>
-                      </div>
-                    )}
 
-                    {/* Live Telemetry & Open Live Action HUD */}
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 pointer-events-none">
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/95 backdrop-blur-md border border-slate-200 text-[10px] font-mono text-slate-700 shadow-sm">
-                        <Activity className="w-3 h-3 text-emerald-600 animate-pulse" />
-                        <span>P99: <strong className="text-slate-900">12ms</strong></span>
-                        <span className="text-slate-300">&bull;</span>
-                        <span className="text-emerald-700 font-bold">200 OK</span>
-                        <span className="hidden sm:inline text-slate-300">&bull;</span>
-                        <span className="hidden sm:inline text-slate-500">HTTP/3</span>
-                      </div>
-
-                      <div className="opacity-90 group-hover/screen:opacity-100 transition-opacity pointer-events-auto">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="px-3 py-1 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-display font-bold text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-md transition-all cursor-pointer"
-                        >
-                          <span>Open Live</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </div>
+                    {/* Open Live Action HUD */}
+                    <div className="absolute bottom-2.5 right-2.5 opacity-90 group-hover/screen:opacity-100 transition-opacity pointer-events-auto">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-3 py-1 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-display font-bold text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-md transition-all cursor-pointer"
+                      >
+                        <span>Open Live</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
                 )}
@@ -279,15 +260,7 @@ export default function ProjectsPage({ navigate }) {
               </div>
 
               {/* Action Buttons */}
-              <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="text-xs font-mono text-slate-700 hover:text-blue-700 flex items-center gap-1.5 transition-colors cursor-pointer"
-                >
-                  <Eye className="w-3.5 h-3.5 text-blue-600" />
-                  <span>Inspect Spec</span>
-                </button>
-
+              <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-end">
                 <a
                   href={project.liveUrl}
                   target="_blank"

@@ -203,8 +203,8 @@ export default function AboutPage({ navigate }) {
                 </div>
 
                 <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-xs font-mono shadow-md">
-                  <div className="font-bold text-[#0A0F2E]">Logix Cyber Park, Tower B, Sector 62, Noida, UP</div>
-                  <div className="text-[11px] text-slate-500">180+ Full-Time Systems Architects &bull; ISO 27001 Certified</div>
+                  <div className="font-bold text-[#0A0F2E]">Sector 62, Noida, UP</div>
+                  <div className="text-[11px] text-slate-500">Central Engineering Hub &bull; ISO 27001 Certified</div>
                 </div>
               </div>
             </div>
@@ -225,15 +225,15 @@ export default function AboutPage({ navigate }) {
 
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="font-display font-bold text-2xl text-blue-600">180+</div>
-                  <div className="text-xs font-mono text-slate-700 font-semibold uppercase mt-0.5">In-House Engineers</div>
-                  <div className="text-[11px] text-slate-500 mt-1">Zero outsourced freelance risk</div>
+                  <div className="font-display font-bold text-2xl text-blue-600">30+</div>
+                  <div className="text-xs font-mono text-slate-700 font-semibold uppercase mt-0.5">Countries Served</div>
+                  <div className="text-[11px] text-slate-500 mt-1">Global enterprise delivery from Noida</div>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="font-display font-bold text-2xl text-blue-600">24/7/365</div>
-                  <div className="text-xs font-mono text-slate-700 font-semibold uppercase mt-0.5">Physical NOC Guard</div>
-                  <div className="text-[11px] text-slate-500 mt-1">Direct escalation hotline</div>
+                  <div className="font-display font-bold text-2xl text-blue-600">ISO 27001</div>
+                  <div className="text-xs font-mono text-slate-700 font-semibold uppercase mt-0.5">SOC 2 Type II Certified</div>
+                  <div className="text-[11px] text-slate-500 mt-1">Bank-grade security & compliance</div>
                 </div>
               </div>
 
@@ -398,13 +398,6 @@ export default function AboutPage({ navigate }) {
                 className="p-6 rounded-2xl bg-[#0a1232] border border-[#1a2a5e] shadow-xl flex flex-col justify-between group transition-all"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono text-[#00C2FF] font-semibold">{job.type}</span>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#05081A] text-emerald-400 border border-emerald-500/30 font-medium">
-                      Open Position
-                    </span>
-                  </div>
-
                   <h4 className="font-display font-bold text-lg text-white group-hover:text-[#00C2FF] transition-colors mb-2">
                     {job.title}
                   </h4>
@@ -412,7 +405,7 @@ export default function AboutPage({ navigate }) {
                     {job.desc}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mb-6">
+                  <div className="flex flex-wrap gap-1.5">
                     {job.skills.map((skill, i) => (
                       <span key={i} className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#05081A] text-slate-300 border border-[#1a2a5e]">
                         {skill}
@@ -420,13 +413,6 @@ export default function AboutPage({ navigate }) {
                     ))}
                   </div>
                 </div>
-
-                <button
-                  onClick={() => setSelectedJob(job)}
-                  className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-bold transition-all cursor-pointer text-center shadow-md"
-                >
-                  Apply for Position &rarr;
-                </button>
               </motion.div>
             ))}
           </div>
